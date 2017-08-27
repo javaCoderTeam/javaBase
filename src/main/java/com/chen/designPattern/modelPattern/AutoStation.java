@@ -1,6 +1,7 @@
 package com.chen.designPattern.modelPattern;
 
 /**
+ * 汽车站台 具体模板
  * Created by Chen Weijie on 2017/8/17.
  */
 public class AutoStation extends Station {

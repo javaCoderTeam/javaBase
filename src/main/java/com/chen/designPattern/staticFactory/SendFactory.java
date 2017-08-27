@@ -1,6 +1,7 @@
 package com.chen.designPattern.staticFactory;
 
 /**
+ * 静态工厂类
  * Created by chenwj3 on 2017/1/19.
  */
 public class SendFactory {

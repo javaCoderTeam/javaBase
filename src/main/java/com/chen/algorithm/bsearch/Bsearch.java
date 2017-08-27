@@ -30,8 +30,36 @@ public class Bsearch {
             return bSearch(array, low, high, target);
         }
 
-        return target;
+        return mid;
     }
+
+    @Test
+    public int bSearch(int low, int high, int[] nums, int target) {
+
+        if (low > high) {
+            return -1;
+        }
+
+        int mid = (low + high) / 2;
+
+        if (target > nums[mid]) {
+            low = mid + 1;
+            return bSearch(low, high, nums, target);
+        } else if (target < nums[mid]) {
+            high = mid + 1;
+            return bSearch(low, high, nums, target);
+        } else {
+            return mid;
+        }
+
+    }
+
+
+
+
+
+
+
 
 
 }

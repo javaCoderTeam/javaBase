@@ -1,6 +1,7 @@
 package com.chen.designPattern.singleton;
 
 /**
+ * 饿汉式模式
  * Created by chenwj3 on 2017/2/28.
  */
 public class Singleton2 {
@@ -15,8 +16,5 @@ public class Singleton2 {
     }
 
 
-    public static void main(String[] args) {
-        Singleton2 singleton2=Singleton2.getSingleton2();
-    }
 
 }

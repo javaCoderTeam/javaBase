@@ -1,6 +1,6 @@
 package com.chen.designPattern.normalFactory;
 
-/**
+/** 具体产品2
  * Created by chenwj3 on 2017/1/19.
  */
 public class MailSender implements Sender {

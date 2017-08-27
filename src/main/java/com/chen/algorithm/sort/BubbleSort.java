@@ -6,11 +6,11 @@ import org.junit.Test;
  * 冒泡排序算法
  * Created by Chen Weijie on 2017/8/17.
  */
-public class SortTest {
+public class BubbleSort {
 
 
     @Test
-    public void bubbleSort() {
+    public void bubbleSort1() {
 
         int[] numbers = {1, 4, 7, 2, 10};
 

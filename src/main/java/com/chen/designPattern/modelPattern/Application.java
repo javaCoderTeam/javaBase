@@ -1,6 +1,7 @@
 package com.chen.designPattern.modelPattern;
 
 /**
+ * 模板方法的使用
  * Created by Chen Weijie on 2017/8/17.
  */
 public class Application {

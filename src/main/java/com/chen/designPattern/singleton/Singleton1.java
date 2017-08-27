@@ -4,6 +4,7 @@ package com.chen.designPattern.singleton;
  * 懒汉式单例模式
  * Created by chenwj3 on 2017/2/28.
  */
+//使用场景 http://blog.csdn.net/tanyujing/article/details/14160941
 public class Singleton1 {
 
     private Singleton1() {

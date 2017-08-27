@@ -1,6 +1,7 @@
 package com.chen.designPattern.modelPattern;
 
 /**
+ * 地铁站台 具体模板
  * Created by Chen Weijie on 2017/8/17.
  */
 public class RailwayStation extends Station {

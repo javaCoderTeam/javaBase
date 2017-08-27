@@ -1,6 +1,7 @@
 package com.chen.designPattern.staticFactory;
 
 /**
+ * 具体产品类1
  * Created by chenwj3 on 2017/1/19.
  */
 public class SmsSender implements Sender {

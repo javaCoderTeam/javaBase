@@ -1,6 +1,6 @@
 package com.chen.designPattern.modelPattern;
 
-/**
+/**抽象模板
  * Created by Chen Weijie on 2017/8/17.
  */
 public abstract class Station {
@@ -14,6 +14,9 @@ public abstract class Station {
 
     public abstract void choiceCarriageType();
 
+    /**
+     * 模板方法
+     */
     public final void ridingStep(){
 
         safetyExamine();
