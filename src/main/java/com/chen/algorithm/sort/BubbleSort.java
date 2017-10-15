@@ -3,7 +3,7 @@ package com.chen.algorithm.sort;
 import org.junit.Test;
 
 /**
- * 冒泡排序算法
+ * 冒泡排序算法 O(n平方)
  * Created by Chen Weijie on 2017/8/17.
  */
 public class BubbleSort {
