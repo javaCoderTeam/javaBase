@@ -1,4 +1,4 @@
-package com.chen.algorithms;
+package com.chen.algorithm.mergeArray;
 
 /**
  * 两个有序数组合并为一个有序数组
