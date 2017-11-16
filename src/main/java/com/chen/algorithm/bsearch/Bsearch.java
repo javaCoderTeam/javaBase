@@ -46,7 +46,7 @@ public class Bsearch {
             low = mid + 1;
             return bSearch(low, high, nums, target);
         } else if (target < nums[mid]) {
-            high = mid + 1;
+            high = mid - 1;
             return bSearch(low, high, nums, target);
         } else {
             return mid;
