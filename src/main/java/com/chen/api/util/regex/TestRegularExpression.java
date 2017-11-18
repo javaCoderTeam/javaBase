@@ -1,10 +1,14 @@
 package com.chen.api.util.regex;
 
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 测试正则表达式类
+ * 测试正则表达式类 (//http://blog.csdn.net/allwefantasy/article/details/3136570/)
  *
  * @author Chen WeiJie
  * @date 2017-11-16 21:31
@@ -12,23 +16,44 @@ import java.util.regex.Pattern;
 public class TestRegularExpression {
 
 
-    //http://blog.csdn.net/allwefantasy/article/details/3136570/
-    public static void main(String[] args) {
 
-        if (args.length < 2) {
-            System.out.println("输入的字符串为空！");
-            System.exit(0);
-        }
-        System.out.println("输入的字符串为： \"" + args[0] + "\"");
-        for (int i = 1; i < args.length; i++) {
-            System.out.println("正则表达式为: \"" + args[i] + "\"");
-            Pattern p = Pattern.compile(args[i]);
-            Matcher m = p.matcher(args[0]);
-            while (m.find()) {
-                System.out.println("Match \"" + m.group() + "\" at positions " + m.start() + "-" + (m.end() - 1));
-            }
-        }
+    @Test
+    public void test1(){
+
+        String input = "This !! unusual use!!of exclamation!!points";
+
+        Pattern pattern =Pattern.compile("!!");
+        String [] arr = pattern.split(input);
+        StringBuffer sb = new StringBuffer();
+        pattern.matcher(input).appendReplacement(sb,arr[0].toUpperCase()).appendTail(sb);
+
+        String stringSpit ="this is a String!";
+        String[] arr2 = stringSpit.split("\\n");
+
     }
+
+
+    @Test
+    public void test2() {
+
+        Matcher m = Pattern.compile("[frb][aiu][gx]").matcher("fix the rug with bags");
+
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+
+        m.reset("fix the rig with rags");
+
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+
+
+    }
+
+
+
+
 
 
 }
