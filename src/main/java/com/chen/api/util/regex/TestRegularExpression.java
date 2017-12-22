@@ -2,8 +2,6 @@ package com.chen.api.util.regex;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,23 +14,28 @@ import java.util.regex.Pattern;
 public class TestRegularExpression {
 
 
-
+    /**
+     * 测试split方法
+     */
     @Test
-    public void test1(){
+    public void test1() {
 
         String input = "This !! unusual use!!of exclamation!!points";
 
-        Pattern pattern =Pattern.compile("!!");
-        String [] arr = pattern.split(input);
+        Pattern pattern = Pattern.compile("!!");
+        String[] arr = pattern.split(input);
         StringBuffer sb = new StringBuffer();
-        pattern.matcher(input).appendReplacement(sb,arr[0].toUpperCase()).appendTail(sb);
+        pattern.matcher(input).appendReplacement(sb, arr[0].toUpperCase()).appendTail(sb);
 
-        String stringSpit ="this is a String!";
+        String stringSpit = "this is a String!";
         String[] arr2 = stringSpit.split("\\n");
 
     }
 
 
+    /**
+     * 测试Matcher.reset()方法
+     */
     @Test
     public void test2() {
 
@@ -47,13 +50,7 @@ public class TestRegularExpression {
         while (m.find()) {
             System.out.println(m.group());
         }
-
-
     }
-
-
-
-
 
 
 }

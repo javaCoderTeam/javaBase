@@ -11,25 +11,31 @@ import java.util.regex.Pattern;
  */
 public class RegexTest3 {
 
+
+    /**
+     * 演示pattern  match对象
+     */
     @Test
     public void test1() {
 
         Pattern pattern = Pattern.compile("\\d+");
 
-        Matcher matcher = pattern.matcher("56");
+        Matcher matcher = pattern.matcher("56sd47f");
         //表示整个字符串是否可以与模式匹配
-        boolean b = matcher.matches();
-        matcher.group();
-//        System.out.println("b=="+b);
-        System.out.println(matcher.group());
+        //获取匹配的第一个分组，而且会消费字符串，后续的循环匹配不到56
+//        boolean b = matcher.matches();
 
         while (matcher.find()) {
             System.out.println("result=" + matcher.group());
-            System.out.println("count=" + matcher.groupCount());
         }
+
+
     }
 
 
+    /**
+     * 测试从指定位置查找字符串
+     */
     @Test
     public void test2() {
 
@@ -50,6 +56,9 @@ public class RegexTest3 {
     }
 
 
+    /**
+     * 测试分组和分组的个数
+     */
     @Test
     public void test3() {
 
@@ -77,6 +86,9 @@ public class RegexTest3 {
     }
 
 
+    /**
+     * 测试分组的开始位置和结束位置
+     */
     @Test
     public void test4() {
         String[] input = new String[]{"Java has regular expressions in 1.4", "regular expressions now expressing in Java", "Java represses oracular expressions"};

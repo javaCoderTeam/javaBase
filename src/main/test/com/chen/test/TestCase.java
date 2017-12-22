@@ -22,7 +22,6 @@ public class TestCase {
         final int TIDYING = 2 << COUNT_BITS;
         final int TERMINATED = 3 << COUNT_BITS;
 
-
     }
 
 

@@ -55,5 +55,36 @@ public class RegexTest1 {
         Arrays.asList(strings).forEach(str -> System.out.println(str + ",matches:" + str.matches(patterStr)));
     }
 
+    /**
+     * 测试换行模式
+     */
+    @Test
+    public void testPattern() {
+        Matcher m = Pattern.compile("(?ms)^.*$").matcher("a\r\nb\r\nc");
+        while (m.find()) {
+            System.out.println("matched:" + m.group());
+        }
+    }
+
+
+    /**
+     * 测试回溯
+     */
+    @Test
+    public void testMatch() {
+        String str = "12345";
+
+        Pattern pattern = Pattern.compile("(\\d{1,3})(\\d{1,3})");
+
+        Matcher matcher = pattern.matcher(str);
+
+        while (matcher.find()) {
+            System.out.println("count:" + matcher.groupCount());
+            for (int i = 0; i < matcher.groupCount(); i++) {
+                System.out.println(matcher.group(i));
+            }
+        }
+    }
+
 
 }
