@@ -11,7 +11,7 @@ public class MyThread extends Thread {
 
     @Override
     public void run(){
-        System.out.println(Thread.currentThread().getName()+"正在运行。。。");
+        System.out.println(Thread.currentThread().getName() + "正在运行。。。");
     }
 
 }

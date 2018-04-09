@@ -21,6 +21,11 @@ public class TestStringFormat {
         System.out.println(index4);
         System.out.println(index5);
 
+        String index6 = String.format("%01d", 10025 % 10);
+        System.out.println(index6);
+        double l=Math.pow(10,6);
+        System.out.println(l);
+
     }
 
 }
