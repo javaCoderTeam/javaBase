@@ -10,9 +10,8 @@ public class IsAliveThreadTest {
 
     public static void main(String[] args) {
         IsAliveThread isAliveThread = new IsAliveThread();
-        Thread thread = new Thread(isAliveThread);
-        thread.setName("A");
-        thread.start();
+        isAliveThread.setName("A");
+        isAliveThread.start();
 
     }
 }
