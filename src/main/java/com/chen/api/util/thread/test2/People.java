@@ -23,13 +23,6 @@ public class People extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-
         }
-
-
-
     }
-
-
 }
