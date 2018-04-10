@@ -11,6 +11,7 @@ public class NewRunnable {
 
     public static void main(String[] args) {
 
+        //创建线程的一种方式
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -18,5 +19,16 @@ public class NewRunnable {
             }
         };
         new Thread(runnable).start();
+
+        //创建线程的另一种方式
+        Thread thread = new Thread() {
+
+            @Override
+            public void run() {
+                System.out.println("Thread 直接创建线程 ");
+            }
+        };
+        thread.start();
+
     }
 }
