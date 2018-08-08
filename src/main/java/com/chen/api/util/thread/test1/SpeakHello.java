@@ -6,6 +6,7 @@ package com.chen.api.util.thread.test1;
 public class SpeakHello extends Thread {
 
 
+    @Override
     public void run() {
 
         for (int i = 0; i < 10; i++) {
@@ -13,6 +14,5 @@ public class SpeakHello extends Thread {
         }
 
     }
-
 
 }

@@ -5,8 +5,8 @@ package com.chen.api.util.thread.test1;
  */
 public class SpeakNiHao extends Thread {
 
+    @Override
     public void run() {
-
         for (int i = 0; i < 20; i++) {
             System.out.println("你好" + i);
         }

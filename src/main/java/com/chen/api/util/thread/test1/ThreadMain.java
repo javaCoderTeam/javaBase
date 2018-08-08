@@ -8,13 +8,12 @@ public class ThreadMain {
 
     public static void main(String[] args) {
 
-        SpeakHello speakHello =new SpeakHello();
-        SpeakNiHao speakNiHao =new SpeakNiHao();
+        SpeakHello speakHello = new SpeakHello();
+        SpeakNiHao speakNiHao = new SpeakNiHao();
         speakHello.start();
         speakNiHao.start();
-        for (int i=0;i<10;i++){
-
-            System.out.println("我是主程序"+i);
+        for (int i = 0; i < 10; i++) {
+            System.out.println("我是主程序" + i);
         }
 
 
