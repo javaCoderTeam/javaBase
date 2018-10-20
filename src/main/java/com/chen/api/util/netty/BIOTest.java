@@ -7,14 +7,6 @@ package com.chen.api.util.netty;
 public class BIOTest {
 
 
-    public static void main(String[] args) {
-
-
-
-
-
-
-    }
 
 
 }
