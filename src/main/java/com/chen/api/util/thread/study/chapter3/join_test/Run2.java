@@ -19,7 +19,7 @@ public class Run2 {
                 try {
                     int secondValue = (int) (Math.random() * 10000);
                     System.out.println(secondValue);
-
+                    System.out.println("==========" + Thread.currentThread().getName());
                     Thread.sleep(secondValue);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -31,6 +31,7 @@ public class Run2 {
             Thread thread = new Thread(runnable);
             thread.start();
             thread.join();
+            System.out.println("==========2 " + Thread.currentThread().getName());
             System.out.println("我想等待thread执行完毕才执行");
         } catch (InterruptedException e) {
             e.printStackTrace();
