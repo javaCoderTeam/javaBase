@@ -1,9 +1,6 @@
 package com.chen.algorithm.exercise;
 
-/**
- * @author :  chen weijie
- * @Date: 2019-02-20 12:53 AM
- */
+
 
 
 /**
@@ -14,7 +11,12 @@ package com.chen.algorithm.exercise;
  * 当要查找的数字比右上角的数字小时，左移；
  * 如果出了边界，则说明二维数组中不存在该整数。
  */
-public class Solution {
+/**
+ * @author :  chen weijie
+ * @Date: 2019-02-20 12:53 AM
+ */
+
+public class ArraySearch {
 
 
     public static boolean find(int target, int[][] array) {
