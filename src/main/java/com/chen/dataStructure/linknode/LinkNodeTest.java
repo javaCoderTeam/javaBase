@@ -1,4 +1,4 @@
-package com.chen.dataStructure;
+package com.chen.dataStructure.linknode;
 
 /**
  * http://blog.csdn.net/guyuealian/article/details/51119499(单链表的反转)

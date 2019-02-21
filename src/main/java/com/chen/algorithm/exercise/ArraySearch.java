@@ -1,8 +1,6 @@
 package com.chen.algorithm.exercise;
 
 
-
-
 /**
  * 二维数组是有序的：从右上角来看，从左向右依次递减；向下数字递增；
  * <p>
@@ -11,6 +9,7 @@ package com.chen.algorithm.exercise;
  * 当要查找的数字比右上角的数字小时，左移；
  * 如果出了边界，则说明二维数组中不存在该整数。
  */
+
 /**
  * @author :  chen weijie
  * @Date: 2019-02-20 12:53 AM

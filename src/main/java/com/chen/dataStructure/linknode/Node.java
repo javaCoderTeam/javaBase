@@ -1,4 +1,4 @@
-package com.chen.dataStructure;
+package com.chen.dataStructure.linknode;
 
 /**
  * @Author chenweijie
