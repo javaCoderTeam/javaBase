@@ -23,10 +23,10 @@ public class LinkNodeTest {
         node2.setNext(node3);
 
     //打印反转前的列表
-        Node h =head;
-        while (null!=h){
-            System.out.println(h.getData()+" ");
-            h =h.getNext();
+        Node h = head;
+        while (null != h) {
+            System.out.println(h.getData() + " ");
+            h = h.getNext();
         }
 
         // 调用反转方法
@@ -42,31 +42,30 @@ public class LinkNodeTest {
     }
 
 
-
-
     /**
      * 遍历，将当前节点的下一个节点缓存后更改当前节点指针
      */
-    public static Node reverse(Node head){
+    public static Node reverse(Node head) {
 
-        if (head ==null)
+        if (head == null) {
             return head;
+        }
 
         //上一节点
-        Node pre =head;
+        Node pre = head;
         //当前节点
-        Node cur =head.getNext();
+        Node cur = head.getNext();
         //临时节点  用于保存当前节点的指针域（即下一节点）
         Node tmp;
 
         //当前节点为null 说明位于尾节点
-        while (cur!=null){
-            tmp =cur.getNext();
+        while (cur != null) {
+            tmp = cur.getNext();
             //反转指针域的指向
             cur.setNext(pre);
             //指针向下移动
-            pre =cur;
-            cur =tmp;
+            pre = cur;
+            cur = tmp;
         }
         // 最后将原链表的头节点的指针域置为null，还回新链表的头结点，即原链表的尾结点
         head.setNext(null);

@@ -2,6 +2,7 @@ package com.chen.dataStructure.linklistnode;
 
 /**
  * 单链表的具体实现
+ *
  * @author :  chen weijie
  * @Date: 2019-02-21 11:35 PM
  */
@@ -12,7 +13,6 @@ public class SingleLinkedList {
 
     //头节点
     private Node head;
-
 
 
     private class Node {
@@ -31,38 +31,33 @@ public class SingleLinkedList {
 
     /**
      * 单链表的表头添加元素
+     *
      * @param data
      * @return
      */
     public Object addHead(Object data) {
 
         Node newHead = new Node(data);
-
         if (size == 0) {
             head = newHead;
         } else {
-            //新头节点的下个节点是旧的head节点
             newHead.next = head;
-            //新加入的节点为SingleLinkedList的头节点
             head = newHead;
         }
-
         size++;
-        return data;
+
+        return head;
     }
 
 
     /**
      * 删除链表头节点
+     *
      * @return
      */
     public Object deleteHead() {
-
         Object data = head.data;
-
-        //新头节点为旧头节点的下个节点
         head = head.next;
-
         size--;
         return data;
     }
@@ -75,37 +70,55 @@ public class SingleLinkedList {
      */
     public Node find(Object data) {
 
-        Node curr = head;
-        //只是查找，不改变链表的个数，所以要新建tempSize变量
-        int tempSize = size;
+        Node current = head;
 
+        int tempSize = size;
         while (tempSize > 0) {
-            if (data.equals(curr.data)) {
-                return curr;
+            if (data.equals(current.data)) {
+                return current;
+            } else {
+                current = current.next;
+                tempSize--;
             }
-            curr = curr.next;
-            tempSize--;
+
         }
         return null;
+
     }
 
     /**
      * 删除指定元素，删除成功返回true
+     *
      * @param data
      * @return
      */
-    public boolean delete(Object data){
+    public boolean delete(Object data) {
 
+        if (size == 0) {
+            return true;
+        }
+        Node current = head;
+        Node previous = head;
 
+        while (current.data != data) {
+            if (current.next == null) {
+                return false;
+            } else {
+                previous = current;
+                current = current.next;
+            }
+        }
 
-
-
-
-
-
-
-
-        return false;
+        //如果删除的节点是第一个节点
+        if (current == head) {
+            head = current.next;
+            size--;
+        } else {
+            //删除的节点不是第一个节点
+            previous.next = current.next;
+            size--;
+        }
+        return true;
     }
 
 
@@ -117,6 +130,59 @@ public class SingleLinkedList {
     public boolean isEmpty() {
         return size == 0;
     }
+
+
+    //显示节点信息
+    public void display() {
+        if (size > 0) {
+            Node node = head;
+            int tempSize = size;
+            //当前链表只有一个节点
+            if (tempSize == 1) {
+                System.out.println("[" + node.data + "]");
+                return;
+            }
+            while (tempSize > 0) {
+                if (node.equals(head)) {
+                    System.out.print("[" + node.data + "->");
+                } else if (node.next == null) {
+                    System.out.print(node.data + "]");
+                } else {
+                    System.out.print(node.data + "->");
+                }
+                node = node.next;
+                tempSize--;
+            }
+            System.out.println();
+        } else {
+            //如果链表一个节点都没有，直接打印[]
+            System.out.println("[]");
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        singleLinkedList.addHead("A");
+        singleLinkedList.addHead("B");
+        singleLinkedList.addHead("C");
+        singleLinkedList.addHead("D");
+
+        singleLinkedList.display();
+
+        singleLinkedList.delete("B");
+
+        singleLinkedList.display();
+
+        System.out.println("find:" + singleLinkedList.find("D"));
+
+
+    }
+
+
+
 
 
 
