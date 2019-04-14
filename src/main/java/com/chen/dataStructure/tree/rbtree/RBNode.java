@@ -1,4 +1,4 @@
-package com.chen.algorithm.tree.rbtree;
+package com.chen.dataStructure.tree.rbtree;
 
 /**
  * 红黑树节点类

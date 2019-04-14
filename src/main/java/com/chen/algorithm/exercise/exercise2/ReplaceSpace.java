@@ -1,4 +1,4 @@
-package com.chen.algorithm.exercise;
+package com.chen.algorithm.exercise.exercise2;
 
 /**
  * 请实现一个函数，将一个字符串中的每个空格替换成“%20”。

@@ -1,4 +1,4 @@
-package com.chen.algorithm.tree;
+package com.chen.dataStructure.tree;
 
 /**
  * 二叉树搜索树

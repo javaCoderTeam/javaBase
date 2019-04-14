@@ -1,4 +1,4 @@
-package com.chen.algorithm.tree;
+package com.chen.dataStructure.tree;
 
 /**
  * @author :  chen weijie

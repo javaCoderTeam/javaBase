@@ -1,4 +1,4 @@
-package com.chen.algorithm.exercise;
+package com.chen.algorithm.exercise.exercise1;
 
 
 /**
