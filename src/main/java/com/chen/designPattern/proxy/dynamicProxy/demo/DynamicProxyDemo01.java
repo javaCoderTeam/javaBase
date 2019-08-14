@@ -1,7 +1,8 @@
-package com.chen.designPattern.dynamicProxy;
+package com.chen.designPattern.proxy.dynamicProxy.demo;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * java动态代理类demo  https://www.jianshu.com/p/6f6bb2f0ece9
@@ -24,7 +25,7 @@ public class DynamicProxyDemo01 {
     /**
      * 委托类
      */
-    class RealSubject implements Subject {
+    static class RealSubject implements Subject {
         @Override
         public void request() {
             System.out.println("====RealSubject Request====");
@@ -34,7 +35,7 @@ public class DynamicProxyDemo01 {
     /**
      * 代理类的调用处理器
      */
-    class ProxyHandler implements InvocationHandler {
+    static class ProxyHandler implements InvocationHandler {
 
         private Subject subject;
 
@@ -50,6 +51,14 @@ public class DynamicProxyDemo01 {
             System.out.println("after==========");
             return result;
         }
+    }
+
+    public static void main(String[] args) {
+
+        Subject realSubject = new RealSubject();
+        InvocationHandler proxyHandler = new ProxyHandler(realSubject);
+        Subject realSubjectProxy = (Subject) Proxy.newProxyInstance(realSubject.getClass().getClassLoader(), realSubject.getClass().getInterfaces(), proxyHandler);
+        realSubjectProxy.request();
     }
 
 

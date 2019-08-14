@@ -1,9 +1,6 @@
 package com.chen.test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author :  chen weijie
@@ -23,6 +20,12 @@ public class TestList {
         for (Integer a : list) {
             System.out.println(a);
         }
+
+
+        Objects.equals(3,4);
+
+
+
 
     }
 

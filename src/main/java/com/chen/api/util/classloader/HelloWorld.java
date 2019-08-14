@@ -9,6 +9,26 @@ package com.chen.api.util.classloader;
 public class HelloWorld {
 
 
+    private String name;
+
+    private Integer age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     /**
      * 三、类加载的一般过程
      * 原理：双亲委托模式
@@ -24,9 +44,13 @@ public class HelloWorld {
      * 3、Bootstrap Loader（启动类加载器）是最顶级的类加载器了，其父加载器为null.
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 
         HelloWorld hello = new HelloWorld();
+        Class<?> clazz = hello.getClass();
+        Class<?> tClass = HelloWorld.class;
+        Class<?> tClass2 = Class.forName("com.chen.api.util.classloader.HelloWorld");
+
         Class<?> c = hello.getClass();
         ClassLoader classLoader = c.getClassLoader();
         System.out.println(classLoader);
