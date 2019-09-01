@@ -1,5 +1,8 @@
 package com.chen.api.util.stream;
 
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -16,6 +19,22 @@ public class StreamTest2 {
 
         double minValue = Stream.of(1.0, 2.0, 11.0, -1.5).reduce(Double.MAX_VALUE, Double::min);
         System.out.println("minValue==" + minValue);
+
+
+
+        Stream<String> stream = Stream.of("1","b","c");
+
+
+        stream.filter(s -> s.equals("1")).collect(Collectors.toCollection(ArrayList::new)).forEach(System.out::println);
+
+
+
+
+
+
+
+
+
 
     }
 

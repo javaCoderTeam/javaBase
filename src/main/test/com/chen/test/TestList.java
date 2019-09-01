@@ -11,20 +11,16 @@ public class TestList {
 
     public static void main(String[] args) {
 
+        List<Integer> list = new ArrayList<>(10);
 
-        Set<Integer> set = new HashSet<>();
-
-
-        List<Integer> list = new ArrayList<>(null);
-
-        for (Integer a : list) {
-            System.out.println(a);
-        }
+        String a , b ,c = null;
 
 
-        Objects.equals(3,4);
+        a = b=  "test";
 
 
+        System.out.println(a);
+        System.out.println(b);
 
 
     }

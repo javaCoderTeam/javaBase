@@ -9,9 +9,9 @@ public class MyThread extends Thread {
     @Override
     public void run() {
 
-        synchronized (Lock.lock) {
+        synchronized (LockDemo.lock) {
             try {
-                Lock.lock.wait();
+                LockDemo.lock.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

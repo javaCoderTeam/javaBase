@@ -30,6 +30,7 @@ public class StreamBrief {
 
         List<Integer> list = Arrays.asList(1, 2, 3, 6, 9, 35, 2, 1, 3, 4, 5, 6, 79, 90);
         list.stream()
+                .mapToInt(x -> x * x)
                 .filter(x -> x % 2 != 0)
                 .map(x -> x * x).skip(1).limit(3)
                 .forEach(System.out::println);
@@ -53,7 +54,7 @@ public class StreamBrief {
         List<Integer> list = Arrays.asList(1, 2, 3, 6, 9);
         Stream<Integer> stream = list.stream();
         Integer[] strArray = stream.toArray(Integer[]::new);
-        List<Integer> list1 = stream.collect(Collectors.toList());
+        List<Integer> list1 = stream.collect(Collectors.toCollection(LinkedList::new));
         List<Integer> list2 = stream.collect(Collectors.toCollection(ArrayList::new));
         Set set1 = stream.collect(Collectors.toSet());
         Stack stack1 = stream.collect(Collectors.toCollection(Stack::new));
@@ -99,8 +100,6 @@ public class StreamBrief {
         concat = Stream.of("a", "B", "c", "D", "e", "F").
                 filter(x -> x.compareTo("Z") > 0).
                 reduce("", String::concat);
-
-
     }
 
 
