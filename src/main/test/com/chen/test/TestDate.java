@@ -21,6 +21,7 @@ public class TestDate {
         System.out.println("socre==="+score);
 
 
+        System.out.println(1<<31-1);
 
 
 
