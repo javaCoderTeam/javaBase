@@ -11,6 +11,7 @@
         <mongodb.driver.version>3.2.2</mongodb.driver.version>
         <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
         <spring.version>4.3.11.RELEASE</spring.version>
+        <lombok.version>1.16.10</lombok.version>
     </properties>
 
     <dependencies>
@@ -86,6 +87,19 @@
             <version>${mysql-connector-java.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.10.0.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+
 
         <!-- easypoi -->
         <dependency>
@@ -115,6 +129,12 @@
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->

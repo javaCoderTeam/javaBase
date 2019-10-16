@@ -3,7 +3,7 @@ package com.chen.algorithm.study.test5;
 import org.junit.Test;
 
 /**
- * 中心扩展算法
+ * 中心扩展算法 抄袭的
  *
  * @author :  chen weijie
  * @Date: 2019-09-03 23:58

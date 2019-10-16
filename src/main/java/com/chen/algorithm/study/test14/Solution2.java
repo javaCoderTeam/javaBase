@@ -29,19 +29,15 @@ public class Solution2 {
 
 
     @Test
-    public void testCase(){
+    public void testCase() {
 
 
-        String [] strings = {"flower","flow","flight"};
+        String[] strings = {"flower", "flow", "flight"};
 
         System.out.println(longestCommonPrefix(strings));
 
 
-
     }
-
-
-
 
 
 }
