@@ -1,4 +1,4 @@
-package com.chen.api.util.lock;
+package com.chen.api.util.lock.deadLock;
 
 /**
  * 死锁范例

@@ -18,8 +18,7 @@ public class MyThread extends Thread {
     @Override
     public void run() {
         super.run();
-        while (i > 0) {
-            i--;
+        while (i-- > 0) {
             System.out.println(Thread.currentThread().getName() + "计算count==" + i);
         }
 

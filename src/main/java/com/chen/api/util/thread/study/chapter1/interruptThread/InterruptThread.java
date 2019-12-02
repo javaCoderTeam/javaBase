@@ -12,6 +12,10 @@ public class InterruptThread extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 5000000; i++) {
+
+            if (Thread.currentThread().isInterrupted()) {
+                return;
+            }
             System.out.println("i====" + i);
         }
 
