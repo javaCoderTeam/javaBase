@@ -10,7 +10,7 @@ public class TestMode {
     public static void main(String[] args) {
 
 
-        int n = 1922353 % 400;
+        int n = 34856084 % 400;
 
         System.out.println(n);
 

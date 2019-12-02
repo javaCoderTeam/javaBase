@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchTest {
 
 
-    private static volatile   CountDownLatch latch = new CountDownLatch(30);
+    private static volatile CountDownLatch latch = new CountDownLatch(30);
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -38,8 +38,7 @@ public class CountDownLatchTest {
         public void run() {
             System.out.println("子线程任务正在执行");
             try {
-                Thread.sleep(2000);
-
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

@@ -1,4 +1,4 @@
-package com.chen.api.util.lock;
+package com.chen.api.util.lock.deadLock;
 
 /**
  * @Author chenweijie

@@ -1,7 +1,7 @@
 package com.chen.designPattern.adapter;
 
 /**
- * 适配器 (http://alexpdh.com/2017/06/24/adapter-pattern/)
+ * 适配器 https://blog.csdn.net/jason0539/article/details/22468457
  * 通过在内部包装一个适配者对象，把源接口转换成目标接口。
  *
  * @Author chenweijie
