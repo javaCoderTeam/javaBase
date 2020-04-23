@@ -1,29 +1,23 @@
 package com.chen.designPattern.proxy;
 
 /**
- * 代理模式 （http://www.jianshu.com/p/6f6bb2f0ece9）
- * 代理
- *
- * @Author chenweijie
- * @Date 2017/8/27 3:58
+ * @author :  chen weijie
+ * @Date: 2020-04-21 02:01
  */
-public class Proxy implements Subject {
+public class Proxy implements BuyHouse {
 
-    private Subject subject;
 
+    private BuyHouse buyHouse;
+
+    public Proxy(BuyHouse buyHouse) {
+        this.buyHouse = buyHouse;
+    }
 
     @Override
-    public void request() {
-        System.out.println("PreProcess");
-        subject.request();
-        System.out.println("PostProcess");
-    }
+    public void buyHouse() {
+        System.out.println("买房前准备");
+        buyHouse.buyHouse();
+        System.out.println("买房后装修");
 
-    public Subject getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
     }
 }

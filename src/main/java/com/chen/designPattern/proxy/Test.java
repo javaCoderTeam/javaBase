@@ -1,21 +1,18 @@
 package com.chen.designPattern.proxy;
 
 /**
- * 测试类
+ * https://www.cnblogs.com/daniels/p/8242592.html
  *
- * @Author chenweijie
- * @Date 2017/8/27 4:04
+ * @author :  chen weijie
+ * @Date: 2020-04-21 02:03
  */
 public class Test {
 
     public static void main(String[] args) {
 
-        RealSubject realSubject = new RealSubject();
+        Proxy proxy = new Proxy(new BuyHouseImpl());
 
-        Proxy proxy = new Proxy();
-        proxy.setSubject(realSubject);
-
-        proxy.request();
+        proxy.buyHouse();
 
 
     }

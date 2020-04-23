@@ -15,7 +15,7 @@ public class TestClockwiseOutput {
     @Test
     public void test() {
         int[][] num = new int[100][100];
-        int n = 3;
+        int n = 4;
         int count = 1;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {

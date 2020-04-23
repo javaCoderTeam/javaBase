@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
 /**
+ * https://www.cnblogs.com/daniels/p/8242592.html
+ *
  * @author :  chen weijie
  * @Date: 2019-06-07 17:58
  */

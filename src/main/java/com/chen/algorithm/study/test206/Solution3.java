@@ -25,6 +25,28 @@ public class Solution3 {
         return pre;
     }
 
+
+    // 检测环
+    public static boolean checkCircle(ListNode list) {
+        if (list == null) {
+            return false;
+        }
+
+        ListNode fast = list.next;
+        ListNode slow = list;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (slow == fast) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     @Test
     public void testCase() {
 
