@@ -1,13 +1,10 @@
 package com.chen.algorithm.study.test141;
 
 /**
- * https://leetcode-cn.com/problems/linked-list-cycle/solution/huan-xing-lian-biao-by-leetcode/
- *
  * @author :  chen weijie
- * @Date: 2019-11-02 15:58
+ * @Date: 2020-05-03 15:23
  */
-public class Solution1 {
-
+public class Solution2 {
 
     class ListNode {
         int val;
@@ -26,20 +23,16 @@ public class Solution1 {
             return false;
         }
 
-        ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode slow = head, fast = head.next;
 
-        while (slow != fast) {
-
-            if (fast == null || fast.next == null) {
-                return false;
-            }
+        while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 
-
 }
-

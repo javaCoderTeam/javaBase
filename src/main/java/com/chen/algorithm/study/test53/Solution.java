@@ -25,11 +25,24 @@ public class Solution {
     }
 
 
+    public int maxSubArray2(int[] nums) {
+
+        int max = nums[0];   // 保存最大的结果
+        int pre = 0;            // 保存当前的子序和
+
+        for (int num : nums) {
+            pre = Math.max(pre + num, num);
+            max = Math.max(max, pre);   // 每一步都更新最大值
+        }
+        return max;
+    }
+
+
     @Test
     public void testCase() {
 
         int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(maxSubArray(nums));
+        System.out.println(maxSubArray2(nums));
     }
 
 

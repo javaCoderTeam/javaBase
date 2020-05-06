@@ -34,11 +34,10 @@ public class Solution2 {
             if (map.containsKey(aChar)) {
                 stack.push(aChar);
             } else {
-                if (stack.empty()) {
+                if (stack.isEmpty()) {
                     return false;
                 }
-                Character c = stack.pop();
-                if (aChar != (map.get(c))) {
+                if (stack.pop()!= aChar) {
                     return false;
                 }
             }

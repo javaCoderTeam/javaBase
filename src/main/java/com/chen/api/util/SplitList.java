@@ -1,4 +1,4 @@
-package com.chen.algorithm;
+package com.chen.api.util;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.chen.algorithm.exercise.tree;
+package com.chen.algorithm.exercise.tree.binarysearchTree;
 
 /**
  * @author :  chen weijie

@@ -7,36 +7,26 @@ package com.chen.algorithm.study.test206;
 public class Solution4 {
 
 
+    public void solution(ListNode head) {
 
-
-    public void solution(ListNode head){
-
-        if (head==null){
+        if (head == null) {
             return;
         }
 
 
         ListNode pre = null;
 
-        while (head!=null){
+        while (head != null) {
 
             ListNode temp = head.next;
-            head.next =pre;
-            pre=head;
-            head= temp;
+            head.next = pre;
+            pre = head;
+            head = temp;
 
         }
 
 
-
-
-
-
-
-
     }
-
-
 
 
 }
