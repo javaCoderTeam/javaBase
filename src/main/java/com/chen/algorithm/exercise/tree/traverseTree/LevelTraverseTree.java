@@ -82,7 +82,7 @@ public class LevelTraverseTree {
             // number of elements in the current level
             int level_length = queue.size();
             for (int i = 0; i < level_length; ++i) {
-                TreeNode TreeNode = queue.remove();
+                TreeNode TreeNode = queue.poll();
 
                 // fulfill the current level
                 levels.get(level).add(TreeNode.val);

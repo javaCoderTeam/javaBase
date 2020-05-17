@@ -28,7 +28,7 @@ public class Solution2 {
     @Test
     public void testCase() {
 
-        System.out.println(reverse(9083));
+        System.out.println(reverse(120));
 
     }
 

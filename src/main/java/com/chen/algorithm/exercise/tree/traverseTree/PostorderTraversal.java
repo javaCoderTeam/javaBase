@@ -6,7 +6,7 @@ import java.util.Stack;
 
 /**
  * https://leetcode-cn.com/problems/binary-tree-postorder-traversal/ 145
- * 先序遍历
+ * 后续遍历
  * <p>
  * <p>
  * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/leetcodesuan-fa-xiu-lian-dong-hua-yan-shi-xbian-2/
