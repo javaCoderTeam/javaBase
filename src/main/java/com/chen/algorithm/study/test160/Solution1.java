@@ -39,7 +39,7 @@ public class Solution1 {
                 pB = headA;
             }
         }
-        return null;
+        return pB;
     }
 
 

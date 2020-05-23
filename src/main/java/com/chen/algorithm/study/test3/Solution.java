@@ -46,7 +46,7 @@ public class Solution {
 
     @Test
     public void testCase() {
-        System.out.println(lengthOfLongestSubstring("cdfg"));
+        System.out.println(lengthOfLongestSubstring("cdfcg"));
     }
 
 

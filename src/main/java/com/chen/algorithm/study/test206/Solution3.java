@@ -15,14 +15,15 @@ public class Solution3 {
             return head;
         }
 
-        ListNode pre = null;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
         while (head != null) {
             ListNode temp = head.next;
-            head.next = pre;
-            pre = head;
+            head.next = dummy;
+            dummy = head;
             head = temp;
         }
-        return pre;
+        return dummy;
     }
 
 
