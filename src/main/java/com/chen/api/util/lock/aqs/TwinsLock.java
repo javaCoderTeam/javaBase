@@ -1,4 +1,4 @@
-package com.chen.api.util.aqs;
+package com.chen.api.util.lock.aqs;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
@@ -25,6 +25,7 @@ public class TwinsLock implements Lock {
             setState(count);
         }
 
+        @Override
         public int tryAcquireShared(int reduceCount) {
             for (; ; ) {
                 int current = getState();
@@ -36,6 +37,7 @@ public class TwinsLock implements Lock {
         }
 
 
+        @Override
         public boolean tryReleaseShared(int returnCount) {
             for (; ; ) {
                 int current = getState();

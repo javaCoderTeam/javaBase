@@ -1,7 +1,7 @@
 package com.chen.api.util.thread.mutex;
 
 
-import com.chen.api.util.aqs.Mutex;
+import com.chen.api.util.lock.aqs.Mutex;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

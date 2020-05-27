@@ -1,4 +1,4 @@
-package com.chen.api.util.aqs;
+package com.chen.api.util.lock.aqs;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
