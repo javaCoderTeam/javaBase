@@ -29,7 +29,7 @@ public class Solution2 {
 
 
             firstNode.next = secondNode.next;
-            secondNode.next = firstNode;
+            secondNode.next = prev.next;
             prev.next = secondNode;
 
             prev = firstNode;

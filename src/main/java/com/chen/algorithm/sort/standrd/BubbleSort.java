@@ -1,4 +1,4 @@
-package com.chen.algorithm.sort;
+package com.chen.algorithm.sort.standrd;
 
 import org.junit.Test;
 
@@ -15,10 +15,9 @@ public class BubbleSort {
         int[] numbers = {1, 4, 7, 2, 10};
 
         int size = numbers.length;
-
         boolean flag = false;
-        for (int i = 0; i < size - 1; i++) {
-            for (int j = 0; j < size - 1 - i; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size - i; j++) {
                 if (numbers[j] > numbers[j + 1]) {
                     int temp = numbers[j];
                     numbers[j] = numbers[j + 1];
@@ -30,6 +29,11 @@ public class BubbleSort {
                 break;
             }
 
+        }
+
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
 
     }

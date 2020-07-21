@@ -5,4 +5,11 @@
 
     <bean id="messageService" class="com.chen.spring.ioc.impl.MessageServiceImpl"/>
 
+    <bean id="person1" destroy-method="myDestroy" init-method="myInit" class="com.chen.spring.bean.Person">
+        <property name="name" value="jack"/>
+    </bean>
+
+    <!-- 配置自定义的后置处理器 -->
+    <bean id="postProcessor" class="com.chen.spring.bean.MyBeanPostProcessor" />
+
 </beans>

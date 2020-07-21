@@ -17,13 +17,14 @@ public class Run {
         };
 
 
-        Thread threadA = new Thread(runnable);
-        threadA.setName("a");
-        threadA.start();
-
-        Thread threadB = new Thread(runnable);
-        threadB.setName("b");
-        threadB.start();
+        for (int i = 0; i < 10; i++) {
+            Thread threadA = new Thread(runnable);
+            threadA.setName("a." + i);
+            threadA.start();
+            Thread threadB = new Thread(runnable);
+            threadB.setName("b." + i);
+            threadB.start();
+        }
 
 
     }

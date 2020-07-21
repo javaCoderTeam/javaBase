@@ -46,7 +46,7 @@ public class TestMutex {
         System.out.println("加锁前，a=" + a);
         // 加锁后
         //重置
-        cyclicBarrier.reset();
+//        cyclicBarrier.reset();
 
         a = 0;
         for (int i = 0; i < 30; i++) {

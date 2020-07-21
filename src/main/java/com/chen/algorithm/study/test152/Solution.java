@@ -3,6 +3,7 @@ package com.chen.algorithm.study.test152;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/maximum-product-subarray/solution/hua-jie-suan-fa-152-cheng-ji-zui-da-zi-xu-lie-by-g/
  * @author :  chen weijie
  * @Date: 2019-12-11 23:08
  */

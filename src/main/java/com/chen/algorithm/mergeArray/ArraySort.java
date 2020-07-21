@@ -15,9 +15,7 @@ public class ArraySort {
         int result[];
 
         if (checkSort(a) && checkSort(b)) {
-
             result = new int[a.length + b.length];
-
             //i:用于标示a数组    j：用来标示b数组  k：用来标示传入的数组
             int i = 0, j = 0, k = 0;
             while (i < a.length && j < b.length) {
@@ -26,7 +24,6 @@ public class ArraySort {
                 } else {
                     result[k++] = b[j++];
                 }
-
             }
 
             // 后面连个while循环是用来保证两个数组比较完之后剩下的一个数组里的元素能顺利传入

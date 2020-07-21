@@ -1,5 +1,7 @@
 package com.chen.algorithm.study.test198;
 
+import org.junit.Test;
+
 /**
  * @author :  chen weijie
  * @Date: 2019-11-02 18:43
@@ -14,6 +16,14 @@ public class Solution {
             dp[i + 2] = Math.max(dp[i] + nums[i], dp[i + 1]);
         }
         return dp[nums.length + 1];
+    }
+
+
+    @Test
+    public void testCase() {
+
+        int[] nums = {1, 2};
+        System.out.println(rob(nums));
     }
 
 

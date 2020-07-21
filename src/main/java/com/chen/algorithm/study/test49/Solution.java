@@ -27,5 +27,24 @@ public class Solution {
         return new ArrayList<>(map.values());
     }
 
+    public List<List<String>> isValid(String[] strs) {
+
+        Map<String, List<String>> res = new HashMap<>();
+        for (String str : strs) {
+            char[] chars = str.toCharArray();
+            Arrays.sort(chars);
+            String s = new String(chars);
+
+            if (!res.containsKey(s)) {
+                res.put(s, new ArrayList<>());
+            }
+            res.get(s).add(str);
+
+
+        }
+
+        return new ArrayList<>(res.values());
+    }
+
 
 }

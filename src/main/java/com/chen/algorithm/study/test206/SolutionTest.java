@@ -15,15 +15,14 @@ public class SolutionTest {
             return head;
         }
 
-        ListNode prev = null;
-        ListNode temp;
+        ListNode pre = null;
         while (head != null) {
-            temp = head.next;
-            head.next = prev;
-            prev = head;
+            ListNode temp = head.next;
+            head.next = pre;
+            pre = head;
             head = temp;
         }
-        return prev;
+        return pre;
     }
 
     @Test

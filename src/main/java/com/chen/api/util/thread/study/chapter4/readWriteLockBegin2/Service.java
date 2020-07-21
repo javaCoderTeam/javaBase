@@ -17,7 +17,7 @@ public class Service {
             try {
                 lock.writeLock().lock();
                 System.out.println("获得写锁：" + Thread.currentThread().getName() + " " + System.currentTimeMillis());
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } finally {
                 lock.writeLock().unlock();
             }

@@ -2,6 +2,8 @@ package com.chen.algorithm.rectangle;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 /**
  * User: chenweijie
  * Date: 10/16/17
@@ -14,7 +16,7 @@ public class TestClockwiseOutput {
 
     @Test
     public void test() {
-        int[][] num = new int[100][100];
+        int[][] num = new int[4][4];
         int n = 4;
         int count = 1;
         for (int i = 0; i < n; i++) {
@@ -22,34 +24,42 @@ public class TestClockwiseOutput {
                 num[i][j] = count++;
             }
         }
-        output(num, 0, n - 1);
+        printMatrix(num);
     }
 
 
-    public void output(int[][] num, int start, int end) {
-
-        if (start > end || end <= 0) {
-            return;
+    public ArrayList<Integer> printMatrix(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+        if (row == 0 || col == 0) {
+            return null;
         }
-
-        for (int i = start; i <= end; i++) {
-            System.out.println(num[start][i]);
+        ArrayList<Integer> list = new ArrayList<>();
+        int left = 0, top = 0, bottom = row - 1, right = col - 1;
+        while (left <= right && top <= bottom) {
+            for (int i = left; i <= right; i++) {
+                list.add(matrix[top][i]);
+            }
+            for (int j = top + 1; j <= bottom; j++) {
+                list.add(matrix[j][right]);
+            }
+            if (top != bottom) {
+                for (int t = right - 1; t >= left; t--) {
+                    list.add(matrix[bottom][t]);
+                }
+            }
+            if (left != right) {
+                for (int k = bottom - 1; k > top; k--) {
+                    list.add(matrix[k][left]);
+                }
+            }
+            top++;
+            left++;
+            right--;
+            bottom--;
         }
-
-        for (int i = start + 1; i <= end; i++) {
-            System.out.println(num[i][end]);
-        }
-
-        for (int i = end - 1; i >= start; i--) {
-            System.out.println(num[end][i]);
-        }
-
-        for (int i = end - 1; i > start; i--) {
-            System.out.println(num[i][start]);
-        }
-
-        output(num, start + 1, end - 1);
-
+        return list;
     }
+
 
 }

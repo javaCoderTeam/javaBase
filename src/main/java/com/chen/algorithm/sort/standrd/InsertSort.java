@@ -1,4 +1,4 @@
-package com.chen.algorithm.sort;
+package com.chen.algorithm.sort.standrd;
 
 /**
  * @author :  chen weijie
@@ -7,7 +7,7 @@ package com.chen.algorithm.sort;
 public class InsertSort {
 
 
-    public static int[] sort(int[] array) {
+    public static void sort(int[] array) {
 
         //从下标为1的元素开始选择合适的位置插入，因为下标为0的只有一个元素，默认是有序的
         for (int i = 1; i < array.length; i++) {
@@ -23,7 +23,6 @@ public class InsertSort {
             //存在比其小的数，插入
             array[leftIndex + 1] = temp;
         }
-        return array;
     }
 
     //遍历显示数组
@@ -40,10 +39,24 @@ public class InsertSort {
         System.out.println("未排序数组顺序为：");
         display(array);
         System.out.println("-----------------------");
-        array = sort(array);
+        sort2(array);
         System.out.println("-----------------------");
         System.out.println("经过插入排序后的数组顺序为：");
         display(array);
+    }
+
+
+    public static void sort2(int[] array) {
+
+        for (int i = 1; i < array.length; i++) {
+            int temp = array[i];
+            int leftIndex = i - 1;
+            while (leftIndex >= 0 && temp < array[leftIndex]) {
+                array[leftIndex + 1] = array[leftIndex];
+                leftIndex--;
+            }
+            array[leftIndex + 1] = temp;
+        }
     }
 
 }

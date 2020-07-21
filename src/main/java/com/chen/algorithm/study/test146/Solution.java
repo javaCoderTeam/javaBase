@@ -30,7 +30,7 @@ public class Solution {
 
         @Override
         protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
-            return size() > capacity;
+            return super.size() > capacity;
         }
     }
 

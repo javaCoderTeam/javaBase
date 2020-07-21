@@ -24,11 +24,16 @@ public class Run {
             }
         };
 
-        Thread threadA = new Thread(readTask);
-        threadA.start();
 
-        Thread threadB = new Thread(writeTask);
-        threadB.start();
+        for (int i = 0; i < 10; i++) {
+            Thread threadA = new Thread(readTask);
+            threadA.setName("a." + i);
+            threadA.start();
+            Thread threadB = new Thread(writeTask);
+            threadB.setName("b." + i);
+            threadB.start();
+        }
+
 
 
     }

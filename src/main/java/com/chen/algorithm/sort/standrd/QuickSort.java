@@ -1,4 +1,4 @@
-package com.chen.algorithm.sort;
+package com.chen.algorithm.sort.standrd;
 
 import org.junit.Test;
 

@@ -9,7 +9,6 @@ public class Teacher implements People {
 
     @Override
     public void work() {
-
         System.out.println("老师的工作时教书");
     }
 }

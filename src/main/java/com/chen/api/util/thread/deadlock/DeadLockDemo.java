@@ -5,8 +5,8 @@ package com.chen.api.util.thread.deadlock;
  * @Date: 2020-04-06 00:03
  */
 public class DeadLockDemo {
-    private static Object resource1 = new Object();//资源 1
-    private static Object resource2 = new Object();//资源 2
+    private static Byte[] resource1 = new Byte[0];//资源 1
+    private static Byte[] resource2 = new Byte[0];//资源 2
     public static void main(String[] args) {
         new Thread(() -> {
             synchronized (resource1) {

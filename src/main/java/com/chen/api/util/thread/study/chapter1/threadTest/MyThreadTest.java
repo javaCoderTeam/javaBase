@@ -11,7 +11,12 @@ public class MyThreadTest {
     public static void main(String[] args) {
 
         MyThread myThread = new MyThread();
-        myThread.start();
+
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(myThread,"线程"+(10-i));
+            thread.start();
+        }
+
 
         System.out.println("运行结束!");
     }

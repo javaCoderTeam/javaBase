@@ -44,6 +44,7 @@ public class Solution {
             }
         }
 
+
         public int top() {
             return stack.peek();
         }
@@ -81,13 +82,11 @@ public class Solution {
         }
 
         while (!minStack.getStack().isEmpty()) {
-
             System.out.println("取出元素后：" + minStack.top());
             minStack.pop();
             System.out.println(minStack.getMin());
 
         }
-
 
     }
 

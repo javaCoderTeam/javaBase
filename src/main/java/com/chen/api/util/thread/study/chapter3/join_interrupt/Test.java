@@ -11,7 +11,7 @@ public class Test {
         try {
             ThreadB threadB = new ThreadB();
             threadB.start();
-            Thread.sleep(10);
+            Thread.sleep(100);
             ThreadC threadC = new ThreadC(threadB);
             threadC.start();
         } catch (Exception e) {

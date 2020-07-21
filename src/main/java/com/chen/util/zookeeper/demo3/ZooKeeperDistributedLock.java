@@ -31,9 +31,7 @@ public class ZooKeeperDistributedLock implements Watcher {
             String address = "127.0.0.1:2182,127.0.0.1:2183,127.0.0.1:2184";
             zk = new ZooKeeper(address, sessionTimeout, this);
             connectedLatch.await();
-        } catch (IOException e) {
-            throw new LockException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new LockException(e);
         }
     }
@@ -47,20 +45,6 @@ public class ZooKeeperDistributedLock implements Watcher {
 
         if (this.latch != null) {
             this.latch.countDown();
-        }
-    }
-
-    public void acquireDistributedLock() {
-        try {
-            if (this.tryLock()) {
-                return;
-            } else {
-                waitForLock(waitNode, sessionTimeout);
-            }
-        } catch (KeeperException e) {
-            throw new LockException(e);
-        } catch (InterruptedException e) {
-            throw new LockException(e);
         }
     }
 
@@ -111,6 +95,28 @@ public class ZooKeeperDistributedLock implements Watcher {
         return true;
     }
 
+
+    /**
+     * 获取分布式锁
+     */
+    public void acquireDistributedLock() {
+        try {
+            if (this.tryLock()) {
+                return;
+            } else {
+                waitForLock(waitNode, sessionTimeout);
+            }
+        } catch (KeeperException e) {
+            throw new LockException(e);
+        } catch (InterruptedException e) {
+            throw new LockException(e);
+        }
+    }
+
+
+    /**
+     * 释放分布式锁
+     */
     public void unlock() {
         try {
             // 删除/locks/10000000000节点

@@ -17,7 +17,7 @@ public class Service {
         try {
             lock.readLock().lock();
             System.out.println("thread:" + Thread.currentThread().getName() + "获得读锁，time==" + System.currentTimeMillis());
-            Thread.sleep(10000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -32,7 +32,7 @@ public class Service {
         try {
             lock.writeLock().lock();
             System.out.println("thread:" + Thread.currentThread().getName() + "获得写锁，time==" + System.currentTimeMillis());
-            Thread.sleep(10000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

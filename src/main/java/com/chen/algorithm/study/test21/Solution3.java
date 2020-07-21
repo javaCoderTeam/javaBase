@@ -52,7 +52,7 @@ public class Solution3 {
         l2_2.next = l2_3;
 
 
-        ListNode result = mergeTwoLists(l1_1, l2_1);
+        ListNode result = merge(l1_1, l2_1);
 
         System.out.println(result.val);
         System.out.println(result.next.val);
@@ -62,4 +62,40 @@ public class Solution3 {
         System.out.println(result.next.next.next.next.next.val);
 
     }
+
+    public static ListNode merge(ListNode a, ListNode b) {
+        // TODO
+        if(a == null){
+            return  b;
+        }
+
+        if(b == null){
+            return a;
+        }
+
+        ListNode pre = new  ListNode(-1);
+        ListNode dummy = pre;
+
+        while(a !=null && b !=null){
+
+            if(a.val <= b.val){
+                pre.next = a;
+                a = a.next;
+            }else{
+                pre.next = b;
+                b = b.next;
+            }
+            pre =pre.next;
+        }
+
+        if(a == null){
+            pre.next = b;
+        }
+
+        if(b == null){
+            pre.next = a;
+        }
+        return dummy.next;
+    }
+
 }

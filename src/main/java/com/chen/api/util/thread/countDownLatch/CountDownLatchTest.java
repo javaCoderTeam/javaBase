@@ -43,6 +43,7 @@ public class CountDownLatchTest {
                 e.printStackTrace();
             } finally {
                 latch.countDown();
+                System.out.println(Thread.currentThread().getName() + " down:" + latch.toString());
             }
 
 

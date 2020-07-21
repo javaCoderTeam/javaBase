@@ -30,14 +30,14 @@ public class Solution2 {
         Stack<Character> stack = new Stack<>();
 
         char[] chars = s.toCharArray();
-        for (char aChar : chars) {
+        for (Character aChar : chars) {
             if (map.containsKey(aChar)) {
                 stack.push(aChar);
             } else {
                 if (stack.isEmpty()) {
                     return false;
                 }
-                if (stack.pop()!= aChar) {
+                if (stack.pop().equals(aChar)) {
                     return false;
                 }
             }
@@ -51,8 +51,40 @@ public class Solution2 {
 
         System.out.println(isValid("[](){}"));
 
+    }
+
+    public static void main(String [] args){
+
+        System.out.println(isValid2("[](){}"));
+    }
+
+
+    public static boolean isValid2(String str){
+
+        Map<Character,Character> map = new HashMap<>(3);
+        map.put('(',')');
+        map.put('[',']');
+        map.put('{','}');
+
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0 ; i<str.length();i++){
+            Character c = str.charAt(i);
+            if(map.containsKey(c)){
+                stack.push(c);
+            }else{
+                if(!c.equals(map.get(stack.pop()))){
+                    return false;
+                }
+            }
+
+        }
+        return stack.isEmpty();
 
     }
+
+
+
+
 
 
 }

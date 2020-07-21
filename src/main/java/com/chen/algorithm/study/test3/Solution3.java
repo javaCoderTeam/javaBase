@@ -19,14 +19,13 @@ public class Solution3 {
         }
 
         Map<Character, Integer> map = new HashMap<>(s.length());
-        int max = 0;
-        for (int i = 0, j = 0; i < s.length(); i++) {
-
+        int max = 0, left = 0;
+        for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
-                j = Math.max(j, map.get(s.charAt(i)) + 1);
+                left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
             map.put(s.charAt(i), i);
-            max = Math.max(max, i - j + 1);
+            max = Math.max(max, i - left + 1);
 
         }
         return max;

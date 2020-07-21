@@ -35,4 +35,20 @@ public class Solution3 {
 
     }
 
+
+    public static void main(String[] args) {
+        String[] stringArr = {"flower", "flow", "flight"};
+        String pre = stringArr[0];
+        for (int i = 0; i<stringArr.length;i++) {
+            String  s = stringArr[i];
+            while (!s.startsWith(pre)) {
+                pre = pre.substring(0, pre.length() - 1);
+                if ("".equals(pre)) {
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println(pre);
+    }
+
 }

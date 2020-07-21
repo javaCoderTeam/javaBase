@@ -15,7 +15,7 @@ public class MyThread extends Thread {
         while (true) {
             try {
                 i++;
-                System.out.println("i=" + i);
+                System.out.println( Thread.currentThread().getName()+",i=" + i);
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

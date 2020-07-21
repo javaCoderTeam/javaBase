@@ -1,7 +1,5 @@
 package com.chen.api.util.thread.study.chapter4.conditionExecute;
 
-import com.chen.api.util.thread.study.chapter2.throwExceptionNoLock.ThreadB;
-
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -12,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Date: 2018-05-21 01:11
  */
 public class Run {
-    volatile private static int nextPrintWho = 1;
+    private volatile  static int nextPrintWho = 1;
     private static ReentrantLock lock = new ReentrantLock();
     final private static Condition conditionA = lock.newCondition();
     final private static Condition conditionB = lock.newCondition();
@@ -21,32 +19,28 @@ public class Run {
 
     public static void main(String[] args) {
 
-        Thread threadA = new Thread() {
+        Thread threadA = new Thread(() -> {
 
-            @Override
-            public void run() {
-
-                try {
-                    lock.lock();
-                    while (nextPrintWho != 1) {
-                        conditionA.await();
-                    }
-
-                    for (int i = 0; i < 3; i++) {
-                        System.out.println("threadA:" + (i + 1));
-                    }
-
-                    nextPrintWho = 2;
-                    conditionB.signalAll();
-
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    lock.unlock();
+            try {
+                lock.lock();
+                while (nextPrintWho != 1) {
+                    conditionA.await();
                 }
+
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("threadA:" + (i + 1));
+                }
+
+                nextPrintWho = 2;
+                conditionB.signalAll();
+
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.unlock();
             }
-        };
+        });
 
         Thread threadB = new Thread() {
 

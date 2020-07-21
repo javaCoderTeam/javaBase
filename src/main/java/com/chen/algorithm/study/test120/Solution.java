@@ -1,5 +1,9 @@
 package com.chen.algorithm.study.test120;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,6 +24,22 @@ public class Solution {
             }
         }
         return dp[0][0];
+    }
+
+
+
+    @Test
+    public void testCase(){
+
+        List<List<Integer>> triangle = new ArrayList<>();
+
+        triangle.add(Arrays.asList(2));
+        triangle.add(Arrays.asList(3, 4));
+        triangle.add(Arrays.asList(6, 5, 7));
+        triangle.add(Arrays.asList(4, 1, 8, 3));
+
+        System.out.println(minimumTotal(triangle));
+
     }
 
 }

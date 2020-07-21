@@ -24,7 +24,7 @@ public class Solution {
 
             // Swapping
             firstNode.next = secondNode.next;
-            secondNode.next = firstNode;
+            secondNode.next = prevNode.next;
             prevNode.next = secondNode;
 
             prevNode = firstNode;

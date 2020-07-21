@@ -1,5 +1,7 @@
 package com.chen.algorithm.study.test22;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,13 +31,18 @@ public class Solution2 {
         }
 
         if (left > 0) {
-            generationOneByOne(subList + "(", result, left - 1, right);
+            generationOneByOne(subList + "(", result, left-1, right);
         }
 
         // 子字符串中肯定是左括号多余右括号的
         if (right > 0 && right > left) {
-            generationOneByOne(subList + ")", result, left, right - 1);
+            generationOneByOne(subList + ")", result, left, right-1);
         }
+    }
+
+    @Test
+    public void testCase(){
+        generateParenthesis(3).stream().forEach(System.out::println);
     }
 
 

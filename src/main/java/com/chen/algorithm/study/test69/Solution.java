@@ -15,18 +15,18 @@ public class Solution {
             return x;
         }
 
-        int left = 2, right = x / 2, pivot;
+        int left = 2, right = x / 2, mid;
         long result;
 
         while (right >= left) {
-            pivot = (right - left) / 2 + left;
-            result = (long) pivot * pivot;
+            mid = (right - left) / 2 + left;
+            result = (long) mid * mid;
             if (result > x) {
-                right = pivot - 1;
+                right = mid - 1;
             } else if (result < x) {
-                left = pivot + 1;
+                left = mid + 1;
             } else {
-                return pivot;
+                return mid;
             }
         }
         return right;

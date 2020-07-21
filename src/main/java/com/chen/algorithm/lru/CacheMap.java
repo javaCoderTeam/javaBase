@@ -1,4 +1,4 @@
-package com.chen.api.util.map;
+package com.chen.algorithm.lru;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

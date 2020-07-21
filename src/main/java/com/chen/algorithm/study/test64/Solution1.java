@@ -1,5 +1,7 @@
 package com.chen.algorithm.study.test64;
 
+import org.junit.Test;
+
 /**
  * https://leetcode-cn.com/problems/minimum-path-sum/solution/zui-xiao-lu-jing-he-dong-tai-gui-hua-gui-fan-liu-c/
  *
@@ -33,5 +35,14 @@ public class Solution1 {
         }
         return grid[row - 1][clomn - 1];
     }
+
+    @Test
+    public void testCase() {
+
+        int[][] nums = {{4, 5, 6}, {5, 6, 7}, {52, 4, 5}};
+
+
+    }
+
 
 }

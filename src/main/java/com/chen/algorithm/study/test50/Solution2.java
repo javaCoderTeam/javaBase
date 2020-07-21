@@ -30,6 +30,6 @@ public class Solution2 {
 
     @Test
     public void testCase(){
-        System.out.println(myPow(2.0,11));
+        System.out.println(myPow(2.0,5));
     }
 }

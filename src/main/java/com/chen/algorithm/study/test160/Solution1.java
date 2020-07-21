@@ -25,9 +25,10 @@ public class Solution1 {
         ListNode pA = headA;
         ListNode pB = headB;
 
-        // 终止条件两个不相等
+        // 每个指针都走过两个链表，要么都相等等于相交节点，要么走到最后都是null
         while (pA != pB) {
             if (pA == null) {
+                // 指针直接指向另一个链表，不是next指向另一个链表。因为此时pA已经是null
                 pA = headB;
             } else {
                 pA = pA.next;
