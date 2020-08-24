@@ -14,11 +14,12 @@ public class Solution1 {
 
         List<List<Integer>> res = new ArrayList<>();
 
-        if (nums == null || nums.length < 3) {
+        if (nums == null || nums.length == 0) {
             return res;
         }
 
         Arrays.sort(nums);
+
         for (int i = 0; i < nums.length; i++) {
 
             if (nums[i] > 0) {
@@ -29,27 +30,31 @@ public class Solution1 {
                 continue;
             }
 
-            int L = i + 1, R = nums.length - 1;
+            int left = i + 1, right = nums.length - 1;
 
-            while (L < R) {
-                int sum = nums[i] + nums[L] + nums[R];
+            while (left < right) {
+
+                int sum = nums[left] + nums[right] + nums[i];
+
                 if (sum == 0) {
-                    res.add(Arrays.asList(nums[i], nums[L], nums[R]));
-                    while (L<R && nums[L] == nums[L+1]) {
-                        L++; // 去重
+                    res.add(Arrays.asList(nums[left], nums[right], nums[i]));
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
                     }
-                    while (L<R && nums[R] == nums[R-1]) {
-                        R--; // 去重
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
                     }
-                    L++;
-                    R--;
-                }else if (sum<0){
-                    L++;
-                }else {
-                    R--;
+                    right--;
+                    left++;
+                } else if (sum > 0) {
+                    right--;
+                } else {
+                    left++;
                 }
             }
         }
+
+
         return res;
     }
 

@@ -10,26 +10,17 @@ public class QuickSort {
 
 
     public void sort(int[] array) {
-
-
-        if (array == null || array.length == 0) {
-            return;
-        }
-
         int low = 0, high = array.length - 1;
-
         sort(low, high, array);
     }
 
 
     public void sort(int low, int high, int[] array) {
-
-        if (low < high) {
+        if (high > low) {
             int pivot = partSort(low, high, array);
-            sort(low, pivot - 1, array);
             sort(pivot + 1, high, array);
+            sort(low, pivot - 1, array);
         }
-
     }
 
 
@@ -37,21 +28,22 @@ public class QuickSort {
 
         int pivotValue = array[low];
 
-        while (high > low) {
-            while (high > low && array[high] > pivotValue) {
+        while (low < high) {
+            while (low < high && array[high] > pivotValue) {
                 high--;
             }
             array[low] = array[high];
-            while (high > low && array[low] < pivotValue) {
+
+
+            while (low < high && array[low] < pivotValue) {
                 low++;
             }
             array[high] = array[low];
         }
-
         array[low] = pivotValue;
-
         return low;
     }
+
 
     @Test
     public void testCase() {

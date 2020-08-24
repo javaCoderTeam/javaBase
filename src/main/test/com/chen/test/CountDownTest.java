@@ -17,13 +17,16 @@ public class CountDownTest {
 
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
-                System.out.println(UUID.randomUUID().toString());
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                synchronized (countDownLatch.getClass()){
+                    System.out.println(UUID.randomUUID().toString());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    countDownLatch.countDown();
                 }
-                countDownLatch.countDown();
+
             }).start();
         }
 

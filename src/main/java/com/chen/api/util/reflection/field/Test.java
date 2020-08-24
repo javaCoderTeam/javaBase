@@ -1,12 +1,18 @@
 package com.chen.api.util.reflection.field;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author :  chen weijie
  * @Date: 2019-10-23 00:07
  */
 public class Test {
+
+    public Test(){
+        System.out.println("无参构造器 Run...........");
+    }
 
 
     private String testName = "hello";
@@ -16,7 +22,7 @@ public class Test {
     }
 
 
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
 
         Class<?> clazz = Test.class;
         Class<?> clazz2 = Class.forName("com.chen.api.util.reflection.field.Test");
@@ -27,7 +33,10 @@ public class Test {
         field.setAccessible(true);
         field.set(test, "nihao");
 
-        System.out.println("testName:" + test.getTestName());
+        Constructor<?> constructor1 = clazz3.getConstructor();
+        Test test1 = (Test) constructor1.newInstance();
+
+        System.out.println("testName:" + test1.getTestName());
 
 
     }

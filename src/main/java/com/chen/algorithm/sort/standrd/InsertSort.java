@@ -34,7 +34,7 @@ public class InsertSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {6,8,1,2,4};
+        int[] array = {6, 8, 1, 2, 4};
         //未排序数组顺序为
         System.out.println("未排序数组顺序为：");
         display(array);
@@ -51,12 +51,13 @@ public class InsertSort {
         for (int i = 1; i < array.length; i++) {
             int temp = array[i];
             int leftIndex = i - 1;
-            while (leftIndex >= 0 && temp < array[leftIndex]) {
+            while (leftIndex >= 0 && array[leftIndex] > temp) {
                 array[leftIndex + 1] = array[leftIndex];
-                leftIndex--;
+                leftIndex --;
             }
             array[leftIndex + 1] = temp;
         }
+
     }
 
 }

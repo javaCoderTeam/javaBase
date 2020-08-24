@@ -14,7 +14,7 @@ public class Solution {
 
         for (int i = 0; i < nums.length; i++) {
 
-            for (int j = 1; j <= nums.length - 1; j++) {
+            for (int j = 1; j < nums.length ; j++) {
 
                 if (nums[j] > nums[j - 1]) {
                     int temp = nums[j - 1];

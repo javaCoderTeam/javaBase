@@ -16,7 +16,12 @@ public class Solution {
         if (triangle == null || triangle.size() == 0) {
             return 0;
         }
-        int[][] dp = new int[triangle.size() + 1][triangle.size() + 1];
+        int n = triangle.size();
+        int m = triangle.get(n-1).size();
+
+        // 由于存储最高层的数据，所以需要数值上加1
+        int [][] dp = new int[n+1][m+1];
+
         for (int i = triangle.size() - 1; i >= 0; i--) {
             List<Integer> rows = triangle.get(i);
             for (int j = 0; j < rows.size(); j++) {

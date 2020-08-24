@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /**
  * https://leetcode-cn.com/problems/maximum-product-subarray/solution/hua-jie-suan-fa-152-cheng-ji-zui-da-zi-xu-lie-by-g/
+ *
  * @author :  chen weijie
  * @Date: 2019-12-11 23:08
  */
@@ -12,18 +13,24 @@ public class Solution {
 
     public int maxProduct(int[] nums) {
 
-        int max = Integer.MIN_VALUE, imax = 1, imin = 1;
-        for (int num : nums) {
+        int max = nums[0];
+        int iMax = nums[0];
+        int iMin = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            int num = nums[i];
+
             if (num < 0) {
-                int temp = imax;
-                imax = imin;
-                imin = temp;
+                int temp = iMax;
+                iMax = iMin;
+                iMin = temp;
             }
 
-            imax = Math.max(num, num * imax);
-            imin = Math.min(num, num * imin);
-            max = Math.max(imax, max);
+            iMax = Math.max(num, iMax * num);
+            iMin = Math.min(num, iMin * num);
+            max = Math.max(max, iMax);
         }
+
         return max;
     }
 

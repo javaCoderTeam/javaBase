@@ -14,19 +14,26 @@ public class Solution {
     public double myPow(double x, int n) {
 
         long N = n;
-        if (N > 0) {
-            return quickMul(x, N);
-        } else {
-            return 1.0 / quickMul(x, -N);
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
         }
+
+        double result = 1d;
+        double contribute = x;
+
+        while (N > 0) {
+            if (N % 2 == 1) {
+                result = result * contribute;
+            }
+            contribute = contribute * contribute;
+
+            N = N / 2;
+        }
+
+        return result;
+
     }
 
-    public double quickMul(double x, long N) {
-        if (N == 0) {
-            return 1d;
-        }
-        double y = quickMul(x, N / 2);
-        return N % 2 == 0 ? y * y : y * y * x;
-    }
 }
 

@@ -15,13 +15,14 @@ public class Solution {
         }
 
         ListNode temp = head;
-        while (temp.next != null) {
-            if (temp.next.val == temp.val) {
-                temp.next = temp.next.next;
+        while (head.next != null) {
+            if (head.val == head.next.val) {
+                head.next = head.next.next;
+            } else {
+                head = head.next;
             }
-            temp = temp.next;
         }
-        return head;
+        return temp;
     }
 
 

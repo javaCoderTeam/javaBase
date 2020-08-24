@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 题解都没看懂
  * <p>
- * https://leetcode-cn.com/problems/permutations/solution/quan-pai-lie-by-leetcode/
+ * https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
  *
  * @author :  chen weijie
  * @Date: 2019-11-10 19:23
@@ -40,6 +40,7 @@ public class Solution {
 
         if (first == n) {
             output.add(new ArrayList<>(nums_lst));
+            return;
         }
 
         for (int i = first; i < n; i++) {

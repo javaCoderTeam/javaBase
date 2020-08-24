@@ -17,16 +17,15 @@ public class Solution3 {
         if (s == null || s.length() == 0) {
             return 0;
         }
-
-        Map<Character, Integer> map = new HashMap<>(s.length());
+        Map<Character, Integer> map = new HashMap<>();
         int max = 0, left = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))) {
+            Character c = s.charAt(i);
+            if (map.containsKey(c)) {
                 left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
-            map.put(s.charAt(i), i);
+            map.put(c, i);
             max = Math.max(max, i - left + 1);
-
         }
         return max;
     }

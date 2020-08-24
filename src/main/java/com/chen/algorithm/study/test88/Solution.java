@@ -2,6 +2,8 @@ package com.chen.algorithm.study.test88;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * https://leetcode-cn.com/problems/merge-sorted-array/solution/leetcode88-he-bing-liang-ge-you-xu-shu-zu-by-ma-xi/
  *
@@ -25,9 +27,10 @@ public class Solution {
 
     @Test
     public void testCase() {
-        int[] m = {0};
-        int[] n = {4};
-        merge(m, 0, n, n.length);
+        int[] m = {1,2,3,0,0,0};
+        int[] n = {2,5,6};
+        merge(m, 3, n, n.length);
+        System.out.println(Arrays.toString(m));
 
     }
 

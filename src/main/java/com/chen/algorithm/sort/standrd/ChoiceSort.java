@@ -1,13 +1,11 @@
 package com.chen.algorithm.sort.standrd;
 
 /**
- *
  * 选择排序是每一次从待排序的数据元素中选出最小的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。
- 　　分为三步：
- 　　①、从待排序序列中，找到关键字最小的元素
- 　　②、如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换
- 　　③、从余下的 N - 1 个元素中，找出关键字最小的元素，重复(1)、(2)步，直到排序结束
- *
+ * 　　分为三步：
+ * 　　①、从待排序序列中，找到关键字最小的元素
+ * 　　②、如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换
+ * 　　③、从余下的 N - 1 个元素中，找出关键字最小的元素，重复(1)、(2)步，直到排序结束
  *
  * @author :  chen weijie
  * @Date: 2019-02-28 12:25 AM
@@ -67,22 +65,21 @@ public class ChoiceSort {
 
         for (int i = 0; i < array.length; i++) {
             int min = i;
-            for (int j = i+1; j <array.length ; j++) {
-                if (array[j]<array[min]){
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[min] > array[j]) {
                     min = j;
                 }
             }
-
-            if (min!=i){
-                int temp = array[min];
-                array[min] = array[i];
-                array[i]=temp;
+            if (min != i) {
+                int temp = array[i];
+                array[i] = array[min];
+                array[min] = temp;
             }
+
+
         }
         return array;
     }
-
-
 
 
 }
