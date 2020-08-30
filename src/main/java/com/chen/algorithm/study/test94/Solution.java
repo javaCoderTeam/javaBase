@@ -20,10 +20,9 @@ public class Solution {
         }
     }
 
-    List<Integer> result = new ArrayList<>();
 
     public List<Integer> inorderTraversal(TreeNode root) {
-
+        List<Integer> result = new ArrayList<>();
 
         if (root == null) {
             return result;
