@@ -56,8 +56,7 @@ public class Solution {
 
         int res = 0;
         while (!stack.isEmpty()) {
-            res += stack.peek();
-            stack.pop();
+            res += stack.pop();
         }
 
         return res;
@@ -66,7 +65,7 @@ public class Solution {
 
     @Test
     public void testCase() {
-        System.out.println(calculate("3/2"));
+        System.out.println(calculate("-30+5/2 "));
     }
 
 
