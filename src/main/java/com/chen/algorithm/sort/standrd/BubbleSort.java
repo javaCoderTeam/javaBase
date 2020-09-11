@@ -14,10 +14,10 @@ public class BubbleSort {
 
         int[] numbers = {1, 4, 7, 2, 10};
 
-        int size = numbers.length;
+        int length = numbers.length;
         boolean flag = false;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size - i; j++) {
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length - i - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
                     int temp = numbers[j];
                     numbers[j] = numbers[j + 1];

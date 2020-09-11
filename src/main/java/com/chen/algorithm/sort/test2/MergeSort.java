@@ -45,10 +45,45 @@ public class MergeSort {
         }
     }
 
+    public void merge2(int left, int right, int mid, int[] nums) {
+
+        int i = left, j = mid + 1, k = 0;
+        int[] temp = new int[right - left + 1];
+
+        while (i <= mid && j <= right) {
+            if (nums[i] < nums[j]) {
+                temp[k++] = nums[i++];
+            } else {
+                temp[k++] = nums[j++];
+            }
+        }
+
+        while (i <= mid) {
+            temp[k++] = nums[i++];
+        }
+
+        while (j <= right) {
+            temp[k++] = nums[j++];
+        }
+
+        System.arraycopy(temp, 0, nums, left, temp.length);
+    }
+
+
+    public void mergeSort2(int left, int right, int[] nums) {
+
+        if (right > left) {
+            int mid = (left + right) / 2;
+            mergeSort2(left, mid, nums);
+            mergeSort2(mid + 1, right, nums);
+            merge2(left, right, mid, nums);
+        }
+    }
+
     @Test
     public void testCase() {
         int[] a = {4, 1, 3, 10, 13, 232, -1};
-        mergeSort(0, a.length - 1, a);
+        mergeSort2(0, a.length - 1, a);
         System.out.println("result=" + Arrays.toString(a));
     }
 

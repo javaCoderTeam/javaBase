@@ -20,13 +20,15 @@ public class Solution {
             return m + n;
         }
 
-        //TODO  为什么要设置为+1；
+        // 多开一行一列是为了保存边界条件，即字符长度为 0 的情况，这一点在字符串的动态规划问题中比较常见
         int[][] dp = new int[m + 1][n + 1];
 
+        // 初始化：当 word 2 长度为 0 时，将 word1 的全部删除
         for (int i = 0; i < m + 1; i++) {
             dp[i][0] = i;
         }
 
+        // 当 word1 长度为 0 时，就插入所有 word2 的字符
         for (int j = 0; j < n + 1; j++) {
             dp[0][j] = j;
         }

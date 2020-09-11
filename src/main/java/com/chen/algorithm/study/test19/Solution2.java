@@ -22,23 +22,22 @@ public class Solution2 {
             return null;
         }
 
-        ListNode temp = new ListNode(-1);
-        temp.next = head;
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode pre = new ListNode(-1);
+        pre.next = head;
+        ListNode slow = pre;
+        ListNode fast = pre;
 
-        for (int i = 1; i <= k+1 ; i++) {
+        for (int i = 0; i < k ; i++) {
             fast = fast.next;
         }
 
-        while (fast != null) {
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
 
         slow.next = slow.next.next;
-
-        return  temp.next;
+        return  pre.next;
     }
 
 }
