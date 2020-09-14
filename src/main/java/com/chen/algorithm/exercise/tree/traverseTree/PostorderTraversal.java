@@ -45,7 +45,7 @@ public class PostorderTraversal {
         result.add(node.val);
     }
 
-    public static void postOrderIteration(TreeNode head,List<Integer> list) {
+    public static void postOrderIteration(TreeNode head, List<Integer> list) {
         if (head == null) {
             return;
         }
@@ -67,6 +67,35 @@ public class PostorderTraversal {
         }
     }
 
+
+    public static void postOrderIteration2(TreeNode head, List<Integer> list) {
+
+
+        if (head == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack1 = new Stack<>();
+        Stack<TreeNode> stack2 = new Stack<>();
+        stack1.push(head);
+
+        while (!stack1.isEmpty()) {
+            TreeNode node = stack1.pop();
+            stack2.push(node);
+
+            if (node.left != null) {
+                stack1.push(node.left);
+            }
+
+            if (node.right != null) {
+                stack1.push(node.right);
+            }
+        }
+
+        while (!stack2.isEmpty()){
+            list.add(stack2.pop().val);
+        }
+    }
 
 
 }

@@ -13,7 +13,9 @@ public class Solution1 {
 
 
     public int[] searchRange(int[] nums, int target) {
-        if (nums.length == 0) return new int[]{-1, -1};
+        if (nums.length == 0) {
+            return new int[]{-1, -1};
+        }
         return new int[]{searchLeft(nums, target), searchRight(nums, target)};
     }
 
@@ -22,12 +24,18 @@ public class Solution1 {
         int right = nums.length;
         while (left < right) {
             int mid = (left + right) >>> 1;
-            if (nums[mid] == target) right = mid;
-            else if (nums[mid] < target) left = mid + 1;
-            else if (nums[mid] > target) right = mid;
+            if (nums[mid] == target) {
+                right = mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else if (nums[mid] > target) {
+                right = mid;
+            }
         }
         int pos = (left < nums.length) ? left : nums.length - 1;
-        if (nums[pos] != target) return -1;
+        if (nums[pos] != target) {
+            return -1;
+        }
         return left;
     }
 

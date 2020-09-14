@@ -10,29 +10,20 @@ public class Solution {
 
 
     private boolean[][] marked;
-
     private int[][] direction = {{-1, 0}, {0, -1}, {0, 1}, {1, 0}};
-
     private int m;
-
     private int n;
-
     private String word;
-
     private char[][] board;
 
     public boolean exist(char[][] board, String word) {
 
         m = board.length;
-
         if (m == 0) {
             return false;
         }
-
         n = board[0].length;
-
         marked = new boolean[m][n];
-
         this.word = word;
         this.board = board;
 

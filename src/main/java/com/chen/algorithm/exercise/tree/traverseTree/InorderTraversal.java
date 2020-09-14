@@ -68,4 +68,46 @@ public class InorderTraversal {
     }
 
 
+
+
+
+    public static void inOrderIteration2(TreeNode head, List<Integer> list) {
+
+        if (head == null ){
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(head);
+        TreeNode current = head;
+
+        while (!stack.isEmpty() || current != null) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.pop();
+            list.add(current.val);
+            current = current.right;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
