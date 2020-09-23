@@ -36,7 +36,7 @@ public class Solution {
 
             for (int j = 0; j < k; j++) {
                 if (i == 0) {
-                    dp[i][j][1] = -prices[0];
+                    dp[i][j][1] = -prices[i];
                     dp[i][j][0] = 0;
                 } else {
                     if (j == 0) {

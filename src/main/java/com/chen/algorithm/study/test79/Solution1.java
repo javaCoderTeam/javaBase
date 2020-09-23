@@ -29,7 +29,8 @@ public class Solution1 {
     }
 
     public boolean dfs(int index, char[][] board, String word, int x, int y) {
-        if (x < 0 || y < 0 || x >= board.length || y >= board[0].length || word.charAt(index) != board[x][y] || visited[x][y]) {
+        if (x < 0 || y < 0 || x >= board.length || y >= board[0].length
+                || word.charAt(index) != board[x][y] || visited[x][y]) {
             return false;
         }
 
@@ -37,10 +38,8 @@ public class Solution1 {
             return true;
         }
         visited[x][y] = true;
-        if (dfs(index + 1, board, word, x + 1, y) ||
-                dfs(index + 1, board, word, x - 1, y) ||
-                dfs(index + 1, board, word, x, y + 1) ||
-                dfs(index + 1, board, word, x, y - 1)) {
+        if (dfs(index + 1, board, word, x + 1, y) || dfs(index + 1, board, word, x - 1, y) ||
+                dfs(index + 1, board, word, x, y + 1) || dfs(index + 1, board, word, x, y - 1)) {
             return true;
         }
         visited[x][y] = false;

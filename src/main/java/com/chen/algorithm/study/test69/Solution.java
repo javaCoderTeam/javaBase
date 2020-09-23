@@ -15,7 +15,7 @@ public class Solution {
             return x;
         }
 
-        int left = 2, right = x / 2, mid;
+        int left = 1, right = x / 2, mid;
         long result;
 
         while (right >= left) {
@@ -34,7 +34,7 @@ public class Solution {
 
     @Test
     public void test() {
-        System.out.println(mySqrt(8));
+        System.out.println(mySqrt(2147395599));
     }
 
 }

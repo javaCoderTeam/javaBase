@@ -24,23 +24,23 @@ public class Solution2 {
             return null;
         }
 
-        ListNode pre = new ListNode(-1);
-        pre.next = head;
-        ListNode ans = pre;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
 
         for (int i = 0; i < m-1; i++) {
             pre = pre.next;
+            head = head.next;
         }
 
-        ListNode end = pre.next;
 
         for (int i = m; i < n ; i++) {
-            ListNode temp = end.next;
-            end.next = temp.next;
+            ListNode temp = head.next;
+            head.next = temp.next;
             temp.next = pre.next;
             pre.next = temp;
         }
 
-        return ans.next;
+        return dummy.next;
     }
 }

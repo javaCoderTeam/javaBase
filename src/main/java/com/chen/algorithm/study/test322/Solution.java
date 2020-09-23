@@ -2,7 +2,9 @@ package com.chen.algorithm.study.test322;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * https://leetcode-cn.com/problems/coin-change/solution/322-ling-qian-dui-huan-by-leetcode-solution/
@@ -31,6 +33,8 @@ public class Solution {
     @Test
     public void testCase() {
         int[] coins = {2};
+
+        List<Integer> list = new ArrayList<>();
         System.out.println(coinChange(coins, 3));
     }
 
