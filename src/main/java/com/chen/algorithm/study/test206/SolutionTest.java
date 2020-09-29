@@ -1,7 +1,5 @@
 package com.chen.algorithm.study.test206;
 
-import org.junit.Test;
-
 /**
  * @author :  chen weijie
  * @Date: 2019-09-08 01:38
@@ -9,7 +7,7 @@ import org.junit.Test;
 public class SolutionTest {
 
 
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
 
         if (head == null || head.next == null) {
             return head;
@@ -25,9 +23,8 @@ public class SolutionTest {
         return pre;
     }
 
-    @Test
-    public void testCase() {
 
+    public static void main(String[] args) {
         ListNode l1_1 = new ListNode(4);
         ListNode l1_2 = new ListNode(6);
         ListNode l1_3 = new ListNode(10);
@@ -41,4 +38,14 @@ public class SolutionTest {
         System.out.println(result.next.next.val);
     }
 
+}
+
+class ListNode {
+
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+    }
 }

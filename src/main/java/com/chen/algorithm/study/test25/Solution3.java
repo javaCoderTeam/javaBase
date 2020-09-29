@@ -27,7 +27,7 @@ public class Solution3 {
         while (true) {
 
             int count = 0;
-            while (tail != null || count != k) {
+            while (tail != null && count != k) {
                 count++;
                 tail = tail.next;
             }
