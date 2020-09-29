@@ -9,27 +9,22 @@ import org.junit.Test;
 public class Solution {
 
 
-    private boolean[][] marked;
-    private int[][] direction = {{-1, 0}, {0, -1}, {0, 1}, {1, 0}};
-    private int m;
-    private int n;
-    private String word;
-    private char[][] board;
+    private boolean[][] visited;
 
     public boolean exist(char[][] board, String word) {
 
-        m = board.length;
-        if (m == 0) {
+        int m = board.length;
+        int n = board[0].length;
+
+        if (m * n == 0) {
             return false;
         }
-        n = board[0].length;
-        marked = new boolean[m][n];
-        this.word = word;
-        this.board = board;
+
+        visited = new boolean[m][n];
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (dfs(i, j, 0)) {
+                if (dfs(i, j, board, word, 0)) {
                     return true;
                 }
             }
@@ -38,42 +33,38 @@ public class Solution {
     }
 
 
-    private boolean dfs(int i, int j, int start) {
+    private boolean dfs(int x, int y, char[][] board, String word, Integer index) {
 
-        if (start == word.length() - 1) {
-            return board[i][j] == word.charAt(start);
+        if (x < 0 || y < 0 || x >= board.length || y >= board[0].length || board[x][y] != word.charAt(index) || visited[x][y]) {
+            return false;
         }
 
-        if (board[i][j] == word.charAt(start)) {
-            marked[i][j] = true;
-
-            for (int k = 0; k < 4; k++) {
-                int newX = i + direction[k][0];
-                int newY = j + direction[k][1];
-                if (inArea(newX, newY) && !marked[newX][newY]) {
-                    if (dfs(newX, newY, start + 1)) {
-                        return true;
-                    }
-                }
-            }
-            marked[i][j] = false;
+        if (index == word.length() - 1) {
+            return true;
         }
 
+        visited[x][y] = true;
+        if (dfs(x - 1, y, board, word, index + 1) || dfs(x + 1, y, board, word, index + 1)
+                || dfs(x, y - 1, board, word, index + 1) || dfs(x + 1, y, board, word, index + 1)) {
+            return true;
+        }
+        visited[x][y] = false;
         return false;
-    }
-
-
-    private boolean inArea(int x, int y) {
-        return x >= 0 && x < m && y >= 0 && y < n;
     }
 
 
     @Test
     public void testCase() {
 
-        char[][] chars = {{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+        char[][] nums = {
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}
+        };
 
-        System.out.println(exist(chars, "ABCCED"));
+        String word = "SEE";
+
+        System.out.println(exist(nums, word));
 
 
     }

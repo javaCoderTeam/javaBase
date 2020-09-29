@@ -1,5 +1,8 @@
 package com.chen.algorithm.study.test56;
 
+import com.alibaba.fastjson.JSONObject;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,5 +54,12 @@ public class Solution2 {
 
         return ans;
 
+    }
+
+    @Test
+    public void testCase() {
+
+        int[][] n = {{1, 3}, {2, 6}, {15, 18}, {8, 10}};
+        System.out.println(JSONObject.toJSONString(merge(n)));
     }
 }

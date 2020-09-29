@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -32,28 +31,30 @@ public class Solution {
 
     public int[][] merge(int[][] intervals) {
 
+        List<int[]> inner = Arrays.asList(intervals);
+        List<int[]> newInner = new ArrayList<>(inner);
+        newInner.sort((o1,o2)-> o1[0]-o2[0]);
+
         List<int[]> res = new ArrayList<>();
 
-        if (intervals == null || intervals.length == 0) {
-            return res.toArray(new int[0][]);
-        }
-
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
-
-        int i = 0;
-        while (i < intervals.length) {
-
-            int left = intervals[i][0];
-            int right = intervals[i][1];
-
-            while (i < intervals.length - 1 && intervals[i + 1][0] <= right) {
-                i++;
-                right = Math.max(right, intervals[i][1]);
+        for (int i = 0; i < newInner.size(); ) {
+            int t = newInner.get(i)[1];
+            int j = i + 1;
+            while (j < newInner.size() && newInner.get(j)[0] <= t) {
+                t = Math.max(t, newInner.get(j)[1]);
+                j++;
             }
-            res.add(new int[]{left, right});
-            i++;
+            res.add(new int[]{newInner.get(i)[0], t});
+            i = j;
         }
-        return res.toArray(new int[0][]);
+
+        int[][] array = new int[res.size()][2];
+
+        for (int i = 0; i < res.size(); i++) {
+            array[i][0] = res.get(i)[0];
+            array[i][1] = res.get(i)[1];
+        }
+        return array;
     }
 
 

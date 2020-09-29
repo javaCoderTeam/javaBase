@@ -13,7 +13,6 @@ public class Solution3 {
 
     public int[] searchRange(int[] nums, int target) {
 
-        int left = 0, right = nums.length - 1;
         int[] res = new int[2];
 
         res[0] = leftIndex(target, nums);

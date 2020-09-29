@@ -27,12 +27,12 @@ public class Solution {
 
     public int maxSubArray2(int[] nums) {
 
-        int max = nums[0];   // 保存最大的结果
-        int pre = 0;            // 保存当前的子序和
-
-        for (int num : nums) {
-            pre = Math.max(pre + num, num);
-            max = Math.max(max, pre);   // 每一步都更新最大值
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int max = dp[0];
+        for (int i = 1; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            max = Math.max(dp[i], max);
         }
         return max;
     }

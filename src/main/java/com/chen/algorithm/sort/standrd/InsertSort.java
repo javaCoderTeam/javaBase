@@ -49,13 +49,13 @@ public class InsertSort {
     public static void sort2(int[] array) {
 
         for (int i = 1; i < array.length; i++) {
+            int left = i - 1;
             int temp = array[i];
-            int leftIndex = i - 1;
-            while (leftIndex >= 0 && array[leftIndex] > temp) {
-                array[leftIndex + 1] = array[leftIndex];
-                leftIndex --;
+            while (left >= 0 && array[left] > temp) {
+                array[left + 1] = array[left];
+                left--;
             }
-            array[leftIndex + 1] = temp;
+            array[left + 1] = temp;
         }
 
     }

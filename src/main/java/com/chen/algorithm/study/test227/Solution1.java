@@ -23,14 +23,14 @@ public class Solution1 {
 
             if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
 
-                if (c == '+') {
+                if (sign == '+') {
                     stack.push(num);
-                } else if (c == '-') {
+                } else if (sign == '-') {
                     stack.push(-num);
-                } else if (c == '/') {
+                } else if (sign == '/') {
                     Integer pre = stack.pop();
                     stack.push(pre / num);
-                } else if (c == '*') {
+                } else if (sign == '*') {
                     Integer pre = stack.pop();
                     stack.push(pre * num);
                 }
