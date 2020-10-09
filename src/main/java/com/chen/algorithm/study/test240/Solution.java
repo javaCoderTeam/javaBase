@@ -21,6 +21,10 @@ public class Solution {
      */
     public boolean searchMatrix(int[][] matrix, int target) {
 
+        if (matrix == null) {
+            return false;
+        }
+
         int rows = matrix.length;
         if (rows == 0) {
             return false;
