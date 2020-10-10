@@ -27,11 +27,13 @@ public class Solution {
 
     @Test
     public void testCase() {
+        //int[] m = {1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0};
+        //int[] n = {0, 2, 5, 6, 8, 9, 25};
+        //merge(m, 4, n, n.length);
         int[] m = {1,2,3,0,0,0};
         int[] n = {2,5,6};
         merge(m, 3, n, n.length);
         System.out.println(Arrays.toString(m));
-
     }
 
 }

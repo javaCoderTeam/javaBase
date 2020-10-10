@@ -3,7 +3,7 @@ package com.chen.algorithm.study.test704;
 /**
  * @Auther: zhunn
  * @Date: 2020/10/9 15:31
- * @Description: 二分查找 https://blog.csdn.net/Lngxling/article/details/78217619
+ * @Description: 二分查找及其变种 https://blog.csdn.net/Lngxling/article/details/78217619
  */
 public class Solution {
 
@@ -18,7 +18,7 @@ public class Solution {
 
         int left = 0;
         int right = array.length - 1;
-        //这里必须是 >=,切记遗漏 =
+        //这里必须是 >=,切记勿遗漏 =
         while (right >= left) {
             // 当start=Integer.MAX_VALUE时，给它加个1都会溢出。安全的写法是：mid = start + (end-start)/2,但是会造成死循环，弃用
             //int mid = min + (max - min) >> 1;
