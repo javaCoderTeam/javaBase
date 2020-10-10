@@ -5,6 +5,7 @@ import org.junit.Test;
 /**
  * @author :  chen weijie
  * @Date: 2020-05-03 09:39
+ * @Description: x的平方根，舍弃小数
  */
 public class Solution {
 
