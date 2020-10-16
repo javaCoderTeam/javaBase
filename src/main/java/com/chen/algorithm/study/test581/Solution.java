@@ -10,11 +10,15 @@ import java.util.Arrays;
  *
  * @author :  chen weijie
  * @Date: 2019-11-07 23:34
+ * @Description: 最短无序连续子数组
  */
 public class Solution {
 
 
     public int findUnsortedSubarray(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
 
         int[] snums = nums.clone();
         Arrays.sort(snums);
