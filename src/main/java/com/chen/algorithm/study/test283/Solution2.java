@@ -8,6 +8,7 @@ import java.util.Arrays;
  * 移动0
  * @author :  chen weijie
  * @Date: 2019-11-03 18:44
+ * @Description: zhunn 移动0至末尾
  */
 public class Solution2 {
 

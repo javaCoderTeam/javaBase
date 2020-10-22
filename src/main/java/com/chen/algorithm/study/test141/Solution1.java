@@ -5,6 +5,7 @@ package com.chen.algorithm.study.test141;
  *
  * @author :  chen weijie
  * @Date: 2019-11-02 15:58
+ * @Description: zhunn 判断链表是否有环
  */
 public class Solution1 {
 

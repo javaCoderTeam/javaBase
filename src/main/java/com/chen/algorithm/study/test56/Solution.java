@@ -12,6 +12,7 @@ import java.util.List;
  *
  * @author :  chen weijie
  * @Date: 2019-11-14 00:22
+ * @Description: zhunn 合并区间
  */
 public class Solution {
 

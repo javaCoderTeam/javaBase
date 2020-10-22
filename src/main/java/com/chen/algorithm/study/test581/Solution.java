@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  * @author :  chen weijie
  * @Date: 2019-11-07 23:34
- * @Description: 最短无序连续子数组
+ * @Description: zhunn 最短无序连续子数组
  */
 public class Solution {
 

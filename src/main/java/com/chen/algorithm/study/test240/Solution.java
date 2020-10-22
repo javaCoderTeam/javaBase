@@ -5,7 +5,7 @@ package com.chen.algorithm.study.test240;
  *
  * @author :  chen weijie
  * @Date: 2019-12-22 14:26
- * @Description: 搜索二维矩阵
+ * @Description: zhunn 搜索二维矩阵
  */
 public class Solution {
 
