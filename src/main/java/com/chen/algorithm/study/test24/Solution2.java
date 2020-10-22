@@ -1,5 +1,7 @@
 package com.chen.algorithm.study.test24;
 
+import org.junit.Test;
+
 /**
  * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
  * <p>
@@ -27,7 +29,6 @@ public class Solution2 {
             ListNode firstNode = head;
             ListNode secondNode = head.next;
 
-
             firstNode.next = secondNode.next;
             secondNode.next = prev.next;
             prev.next = secondNode;
@@ -40,4 +41,22 @@ public class Solution2 {
     }
 
 
+    @Test
+    public void test(){
+        ListNode l1_1 = new ListNode(1);
+        ListNode l1_2 = new ListNode(2);
+        ListNode l1_3 = new ListNode(3);
+        ListNode l1_4 = new ListNode(4);
+
+        l1_1.next = l1_2;
+        l1_2.next = l1_3;
+        l1_3.next = l1_4;
+
+        ListNode result = swapPairs(l1_1);
+
+        System.out.println(result.val);
+        System.out.println(result.next.val);
+        System.out.println(result.next.next.val);
+        System.out.println(result.next.next.next.val);
+    }
 }
