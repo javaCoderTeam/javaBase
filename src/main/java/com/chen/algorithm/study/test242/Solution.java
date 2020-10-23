@@ -5,16 +5,17 @@ import org.junit.Test;
 /**
  * @author :  chen weijie
  * @Date: 2020-05-03 22:12
+ * @Description: zhunn 有效的字母异位词。哈希表
  */
 public class Solution {
 
     public boolean isAnagram(String s, String t) {
 
-        if (s.length() != t.length()) {
+        if (s == null || t == null || s.length() != t.length()) {
             return false;
         }
 
-        int [] counter = new int[26];
+        int[] counter = new int[26];
         for (int i = 0; i < s.length(); i++) {
             counter[s.charAt(i) - 'a']++;
             counter[t.charAt(i) - 'a']--;
@@ -30,11 +31,10 @@ public class Solution {
 
 
     @Test
-    public void testCase(){
+    public void testCase() {
 
-        System.out.println(isAnagram("anagram","nagaram"));
+        System.out.println(isAnagram("anagram", "nagaram"));
 
     }
-
 
 }
