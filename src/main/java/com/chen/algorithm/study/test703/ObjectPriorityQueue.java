@@ -26,7 +26,7 @@ public class ObjectPriorityQueue {
 
         if (queue.size() < limit) {
             queue.offer(num);
-        } else if (queue.peek() > num) {
+        } else if (queue.peek() < num) {
             queue.poll();
             queue.offer(num);
         }
