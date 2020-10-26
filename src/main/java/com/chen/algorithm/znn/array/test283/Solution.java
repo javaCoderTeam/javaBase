@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @Date: 2019-11-03 18:44
  * @Description: 移动0至末尾
  */
-public class Solution2 {
+public class Solution {
 
     /**
      * @param nums

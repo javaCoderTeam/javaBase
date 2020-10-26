@@ -22,7 +22,7 @@ public class Solution {
                 int temp = matrix[j][i];
                 matrix[j][i] = matrix[i][j];
                 matrix[i][j] = temp;
-                System.out.println("=====" + JSONObject.toJSONString(matrix));
+                System.out.println("-----" + JSONObject.toJSONString(matrix));
             }
         }
 
