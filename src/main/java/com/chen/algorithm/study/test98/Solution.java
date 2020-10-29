@@ -29,7 +29,7 @@ public class Solution {
     }
 
 
-    public boolean isValid(TreeNode root, Integer max, Integer min) {
+    public boolean isValid(TreeNode root, Integer min, Integer max) {
 
         if (root == null) {
             return true;
