@@ -15,7 +15,7 @@ public class Solution {
 
     /**
      * 1-深度优先搜索（DFS），即递归
-     *
+     * 叶子结点都为空，需要走到叶子结点，当一个结点为空一个结点不为空时，说明叶子结点在不为空的那个节点，返回不为空
      * @param root
      * @return
      */
@@ -35,9 +35,15 @@ public class Solution {
             return 0;
         }
 
+        //if(root.left == null && root.right == null){
+        //    return 1;
+        //}
+
         int leftDepth = minDepth1(root.left);
         int rightDepth = minDepth1(root.right);
 
+        // 叶子结点，是左右子节点都为空的节点，当某一个子节点为空时，则返回另一个结点的高度。
+        // 当一个结点为空一个结点不为空时，说明**叶子结点**在不为空的那个节点。
         return root.left == null || root.right == null ? leftDepth + rightDepth + 1 : Math.min(leftDepth, rightDepth) + 1;
     }
 
