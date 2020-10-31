@@ -27,9 +27,9 @@ public class Solution4 {
             char c = s.charAt(i);
 
             if (map.containsKey(c)) {
-                left = Math.max(left, map.get(c));
+                left = Math.max(left, map.get(c) + 1);
             }
-            max = Math.max(max, i - left);
+            max = Math.max(max, i - left + 1);
             map.put(c, i);
         }
         return max;
