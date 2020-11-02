@@ -25,6 +25,11 @@ public class Solution2 {
         }
     }
 
+    /**
+     * 2-bfs
+     * @param n
+     * @return
+     */
     public List<String> generateParenthesis(int n) {
         if (n == 0) {
             return null;
