@@ -1,4 +1,4 @@
-package com.chen.algorithm.znn.recursion.test70;
+package com.chen.algorithm.znn.dynamic.test70;
 
 import org.junit.Test;
 

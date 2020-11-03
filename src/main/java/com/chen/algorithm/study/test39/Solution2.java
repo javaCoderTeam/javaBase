@@ -1,9 +1,11 @@
 package com.chen.algorithm.study.test39;
 
+import com.alibaba.fastjson.JSONObject;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * https://leetcode-cn.com/problems/combination-sum/solution/di-gui-hui-su-tu-wen-fen-xi-ji-bai-liao-9987de-yon/
@@ -24,7 +26,7 @@ public class Solution2 {
 
     public void backtrack(List<List<Integer>> res, int[] candidates, int target, List<Integer> curList, int start) {
         if (target == 0) {
-            res.add(new ArrayList<>(new Stack<>()));
+            res.add(new ArrayList<>(curList));
             return;
         }
 
@@ -39,4 +41,11 @@ public class Solution2 {
         }
     }
 
+    @Test
+    public void test() {
+        int[] candidates = {2, 3, 6, 7};
+        int target = 7;
+
+        System.out.println(combinationSum(candidates, target));
+    }
 }
