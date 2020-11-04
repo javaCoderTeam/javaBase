@@ -1,19 +1,20 @@
-文档上没有，代码有的题：
+补充练习：
+array:
 test11  盛最多水的容器 https://leetcode-cn.com/problems/container-with-most-water
 test287 寻找重复数 https://leetcode-cn.com/problems/find-the-duplicate-number
-test343 整数拆分 https://leetcode-cn.com/problems/integer-break
-test347 前 K 个高频元素 https://leetcode-cn.com/problems/top-k-frequent-elements
-test112 路径总和 https://leetcode-cn.com/problems/path-sum
-test437 路径总和 III https://leetcode-cn.com/problems/path-sum-iii
-test496 下一个更大元素 I https://leetcode-cn.com/problems/next-greater-element-i
-test674 最长连续递增序列 https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence
 offer.test57 和为s的连续正数序列  (https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/)
 
-文档上有，代码上没有的题：
-test474 一和零 https://leetcode-cn.com/problems/ones-and-zeroes
-test494 目标和 https://leetcode-cn.com/problems/target-sum
-test213 打家劫舍 II https://leetcode-cn.com/problems/house-robber-ii
-test337 打家劫舍 III  https://leetcode-cn.com/problems/house-robber-iii
+heap:
+test347 前 K 个高频元素 https://leetcode-cn.com/problems/top-k-frequent-elements
+
+tree:
+test112 路径总和 		https://leetcode-cn.com/problems/path-sum
+test437 路径总和 III 	https://leetcode-cn.com/problems/path-sum-iii
+
+stack:
+test496 下一个更大元素 I https://leetcode-cn.com/problems/next-greater-element-i
+test674 最长连续递增序列 https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence
+
 
 剑指offer第2版：共75题
 简单：共41题
