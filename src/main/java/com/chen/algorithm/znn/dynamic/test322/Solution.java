@@ -12,6 +12,7 @@ import java.util.Arrays;
  * @Auther: zhunn
  * @Date: 2020/11/4 22:03
  * @Description: 零钱兑换：1-动态规划；2-动态规划-优化空间
+ * 返回所需的最少的硬币个数
  */
 public class Solution {
 
