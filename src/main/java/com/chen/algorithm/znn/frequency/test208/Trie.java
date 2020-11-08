@@ -1,45 +1,47 @@
-package com.chen.algorithm.study.test208;
+package com.chen.algorithm.znn.frequency.test208;
 
 /**
- * @author :  chen weijie
- * @Date: 2020-09-02 01:19
+ * https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shu-ju-jie-gou-she-ji-zhi-shi-xian-trie-qian-zhui-/
+ *
+ * @Auther: zhunn
+ * @Date: 2020/11/08 14:46
+ * @Description: 实现 Trie (前缀树)
  */
 public class Trie {
 
+    public Trie root;
+    public char val;
+    public Trie[] children = new Trie[26];
+    public boolean isWord;
 
-
-    public TrieNode root;
-
-    /**
-     * Initialize your data structure here.
-     */
     public Trie() {
-        root = new TrieNode();
-        root.val = ' ';
+        root = new Trie(' ');
     }
 
+    public Trie(char val) {
+        this.val = val;
+    }
 
     /**
      * Inserts a word into the trie.
      */
     public void insert(String word) {
-        TrieNode ws = root;
+        Trie ws = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if (ws.children[c - 'a'] == null) {
-                ws.children[c - 'a'] = new TrieNode(c);
+                ws.children[c - 'a'] = new Trie(c);
             }
             ws = ws.children[c - 'a'];
         }
-        ws.isWorld = true;
+        ws.isWord = true;
     }
 
     /**
      * Returns if the word is in the trie.
      */
     public boolean search(String word) {
-
-        TrieNode ws = root;
+        Trie ws = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if (ws.children[c - 'a'] == null) {
@@ -47,15 +49,14 @@ public class Trie {
             }
             ws = ws.children[c - 'a'];
         }
-
-        return ws.isWorld;
+        return ws.isWord;
     }
 
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
      */
     public boolean startsWith(String prefix) {
-        TrieNode ws = root;
+        Trie ws = root;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
             if (ws.children[c - 'a'] == null) {
@@ -65,20 +66,4 @@ public class Trie {
         }
         return true;
     }
-
-
-
-    class TrieNode {
-        public char val;
-        public boolean isWorld;
-        public TrieNode[] children = new TrieNode[26];
-
-        public TrieNode() {
-        }
-
-        TrieNode(char c) {
-            this.val = c;
-        }
-    }
-
 }
