@@ -1,13 +1,14 @@
 package com.chen.algorithm.znn.tree.test113;
 
 import com.chen.algorithm.znn.tree.TreeNode;
+import org.junit.Test;
 
 import java.util.*;
 
 /**
  * @Auther: zhunn
  * @Date: 2020/10/28 10:11
- * @Description: 二叉树中和为某一值的路径：1-深度优先搜索；2-广度优先搜索
+ * @Description: 路径之和 II，二叉树中和为某一值的路径：1-深度优先搜索；2-广度优先搜索
  * 同剑指 Offer 34
  */
 public class Solution {
@@ -72,18 +73,19 @@ public class Solution {
                 if (rec == sum) {
                     getPath(node);
                 }
-            } else {
-                if (node.left != null) {
-                    map.put(node.left, node);
-                    queueNode.add(node.left);
-                    queueSum.add(rec);
-                }
-                if (node.right != null) {
-                    map.put(node.right, node);
-                    queueNode.add(node.right);
-                    queueSum.add(rec);
-                }
+                continue;
             }
+            if (node.left != null) {
+                map.put(node.left, node);
+                queueNode.add(node.left);
+                queueSum.add(rec);
+            }
+            if (node.right != null) {
+                map.put(node.right, node);
+                queueNode.add(node.right);
+                queueSum.add(rec);
+            }
+
         }
         return res2;
     }
@@ -96,5 +98,15 @@ public class Solution {
         }
         Collections.reverse(temp);
         res2.add(temp);
+    }
+
+    @Test
+    public void test() {
+        TreeNode left = new TreeNode(1, new TreeNode(3), null);
+        TreeNode right = new TreeNode(7, new TreeNode(15), new TreeNode(20));
+        TreeNode root = new TreeNode(3, left, right);
+
+        List<List<Integer>> res = pathSum2(root, 7);
+        System.out.println(res);
     }
 }
