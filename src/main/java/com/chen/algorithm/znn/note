@@ -1,20 +1,4 @@
-补充练习：
-array:
-test11  盛最多水的容器 https://leetcode-cn.com/problems/container-with-most-water
-test287 寻找重复数 https://leetcode-cn.com/problems/find-the-duplicate-number
-offer.test57 和为s的连续正数序列  (https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/)
-
-heap:
-test347 前 K 个高频元素 https://leetcode-cn.com/problems/top-k-frequent-elements
-
-tree:
-test112 路径总和 		https://leetcode-cn.com/problems/path-sum
-test437 路径总和 III 	https://leetcode-cn.com/problems/path-sum-iii
-
-stack:
-test496 下一个更大元素 I https://leetcode-cn.com/problems/next-greater-element-i
-test674 最长连续递增序列 https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence
-
+已实现的有：共223题
 
 剑指offer第2版：共75题
 简单：共41题
