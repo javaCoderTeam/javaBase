@@ -2,6 +2,8 @@ package com.chen.algorithm.sort.standrd;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * 如果要排序数组中下标从 p 到 r 之间的一组数据，我们选择 p 到 r 之间的任意一个数据作为 pivot（分区点）。
  * 我们遍历 p 到 r 之间的数据，将小于 pivot 的放到左边，将大于 pivot 的放到右边，将 pivot 放到中间。经过这一步骤之后，数组 p 到 r 之间的数据就被分成了三个部分，
@@ -17,11 +19,9 @@ public class QuickSort {
     @Test
     public void quickSort() {
 
-        int[] nums = {3, 7, 2, 10, -1, 4};
+        int[] nums = {3, 7, 2, 10, -1, 6};
         sort(0, nums.length - 1, nums);
-        for (int num : nums) {
-            System.out.println(num);
-        }
+        System.out.println(Arrays.toString(nums));
     }
 
 
