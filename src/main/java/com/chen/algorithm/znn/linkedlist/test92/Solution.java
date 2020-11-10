@@ -4,6 +4,14 @@ import com.chen.algorithm.znn.linkedlist.ListNode;
 import org.junit.Test;
 
 /**
+ * 92. 反转链表 II
+ * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
+ * 说明:
+ * 1 ≤ m ≤ n ≤ 链表长度。
+ * 示例:
+ * 输入: 1->2->3->4->5->NULL, m = 2, n = 4
+ * 输出: 1->4->3->2->5->NULL
+ *
  * @Auther: zhunn
  * @Date: 2020/10/24 17:23
  * @Description: 反转链表二：1-双指针，2-删除结点递推
@@ -25,6 +33,7 @@ public class Solution {
 
     /**
      * 1-双指针
+     *
      * @param head
      * @param m
      * @param n
@@ -55,27 +64,28 @@ public class Solution {
 
     /**
      * 2-删除结点递推
+     *
      * @param head
      * @param m
      * @param n
      * @return
      */
-    public ListNode reverseBetween2(ListNode head, int m, int n){
-        if(head == null || head.next == null){
+    public ListNode reverseBetween2(ListNode head, int m, int n) {
+        if (head == null || head.next == null) {
             return head;
         }
 
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
         ListNode pre = dummy;
-        for(int i =0;i<m-1;i++){
+        for (int i = 0; i < m - 1; i++) {
             pre = pre.next;
             head = head.next;
         }
 
-        for (int i = m; i <n ; i++) {
+        for (int i = m; i < n; i++) {
             ListNode nextTemp = head.next;
-            head.next =nextTemp.next;
+            head.next = nextTemp.next;
             nextTemp.next = pre.next;
             pre.next = nextTemp;
         }
@@ -99,7 +109,7 @@ public class Solution {
         l1_5.next = l1_6;
         l1_6.next = l1_7;
 
-        ListNode result = reverseBetween1(l1_1,3,6);
+        ListNode result = reverseBetween1(l1_1, 3, 6);
 
         System.out.println(result.val);
         System.out.println(result.next.val);

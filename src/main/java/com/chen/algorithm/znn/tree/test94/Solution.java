@@ -10,6 +10,8 @@ import java.util.Stack;
 
 /**
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/94er-cha-shu-de-zhong-xu-bian-li-by-wulin-v/
+ * 94. 二叉树的中序遍历
+ * 给定一个二叉树的根节点 root ，返回它的 中序 遍历。
  *
  * @Auther: zhunn
  * @Date: 2020/10/28 16:25
@@ -43,6 +45,7 @@ public class Solution {
 
     /**
      * 2-迭代
+     *
      * @param root
      * @return
      */

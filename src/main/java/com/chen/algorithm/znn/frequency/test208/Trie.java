@@ -2,6 +2,16 @@ package com.chen.algorithm.znn.frequency.test208;
 
 /**
  * https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shu-ju-jie-gou-she-ji-zhi-shi-xian-trie-qian-zhui-/
+ * 208. 实现 Trie (前缀树)
+ * 实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。
+ * 示例:
+ * Trie trie = new Trie();
+ * trie.insert("apple");
+ * trie.search("apple");   // 返回 true
+ * trie.search("app");     // 返回 false
+ * trie.startsWith("app"); // 返回 true
+ * trie.insert("app");
+ * trie.search("app");     // 返回 true
  *
  * @Auther: zhunn
  * @Date: 2020/11/08 14:46

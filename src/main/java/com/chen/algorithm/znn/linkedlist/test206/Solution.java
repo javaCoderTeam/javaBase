@@ -4,6 +4,12 @@ import com.chen.algorithm.znn.linkedlist.ListNode;
 import org.junit.Test;
 
 /**
+ * 206. 反转链表
+ * 反转一个单链表。
+ * 示例:
+ * 输入: 1->2->3->4->5->NULL
+ * 输出: 5->4->3->2->1->NULL
+ *
  * @Auther: zhunn
  * @Date: 2020/10/22 17:23
  * @Description: 反转链表：1-迭代法，2-递归
@@ -27,8 +33,8 @@ public class Solution {
         return pre;
     }
 
-    public ListNode reverseList2(ListNode head){
-        if(head == null || head.next == null){
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode p = reverseList2(head.next);

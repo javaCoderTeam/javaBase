@@ -7,6 +7,9 @@ import org.junit.Test;
 import java.util.*;
 
 /**
+ * 145. 二叉树的后序遍历
+ * 给定一个二叉树，返回它的 后序 遍历。
+ *
  * @Auther: zhunn
  * @Date: 2020/10/28 10:28
  * @Description: 二叉树的后序遍历：1-递归；2-迭代（时间复杂度和空间复杂度都是O(n)）
@@ -38,6 +41,7 @@ public class Solution {
 
     /**
      * 2-迭代法，两个栈实现
+     *
      * @param root
      * @return
      */

@@ -8,16 +8,19 @@ import java.util.List;
 
 /**
  * https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
- * 回溯算法的框架：
- * result = []
- * def backtrack(路径, 选择列表):
- *    if 满足结束条件:
- *      result.add(路径)
- *      return
- *   for 选择 in 选择列表:
- *      做选择
- *      backtrack(路径, 选择列表)
- *      撤销选择
+ * 46. 全排列
+ * 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+ * 示例:
+ * 输入: [1,2,3]
+ * 输出:
+ * [
+ * [1,2,3],
+ * [1,3,2],
+ * [2,1,3],
+ * [2,3,1],
+ * [3,1,2],
+ * [3,2,1]
+ * ]
  *
  * @Auther: zhunn
  * @Date: 2020/11/3 17:52
