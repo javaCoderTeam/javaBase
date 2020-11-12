@@ -33,7 +33,7 @@ import java.util.Map;
  *
  * @Auther: zhunn
  * @Date: 2020/11/08 14:47
- * @Description: LRU缓存机制：哈希表 + 双向链表
+ * @Description: LRU缓存机制：哈希表 + 双向链表（手动实现）
  */
 public class LRUCache {
 

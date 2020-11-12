@@ -44,7 +44,11 @@ import org.junit.Test;
  */
 public class Solution {
 
-
+    /**
+     * 顺时针旋转90°，先转置再反转每一行
+     * 逆时针旋转90°，先转置再反转每一列
+     * @param matrix
+     */
     public void rotate(int[][] matrix) {
 
         int n = matrix.length;
@@ -64,8 +68,8 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m / 2; j++) {
                 int temp = matrix[i][j];
-                matrix[i][j] = matrix[i][m - j - 1];
-                matrix[i][m - j - 1] = temp;
+                matrix[i][j] = matrix[i][m - 1 - j];
+                matrix[i][m - 1 - j] = temp;
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.chen.algorithm.znn.frequency.test7;
 
+import org.junit.Test;
+
 /**
  * 7. 整数反转
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
@@ -19,7 +21,7 @@ package com.chen.algorithm.znn.frequency.test7;
  */
 public class Solution {
 
-    public static int reverse1(int x) {
+    public int reverse(int x) {
         int res = 0;
         while (x != 0) {
             res = res * 10 + x % 10;
@@ -31,7 +33,8 @@ public class Solution {
         return res;
     }
 
-    public static void main(String[] args) {
-        System.out.println(reverse1(123));
+    @Test
+    public void test() {
+        System.out.println(reverse(123));
     }
 }

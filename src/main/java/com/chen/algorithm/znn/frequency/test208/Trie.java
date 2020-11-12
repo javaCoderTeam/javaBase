@@ -20,8 +20,8 @@ package com.chen.algorithm.znn.frequency.test208;
 public class Trie {
 
     public Trie root;
-    public char val;
     public Trie[] children = new Trie[26];
+    public char val;
     public boolean isWord;
 
     public Trie() {
