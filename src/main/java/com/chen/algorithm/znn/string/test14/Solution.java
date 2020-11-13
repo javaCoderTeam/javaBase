@@ -3,6 +3,7 @@ package com.chen.algorithm.znn.string.test14;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/longest-common-prefix/solution/hua-jie-suan-fa-14-zui-chang-gong-gong-qian-zhui-b/
  * 14. 最长公共前缀
  * 编写一个函数来查找字符串数组中的最长公共前缀。
  * 如果不存在公共前缀，返回空字符串 ""。
@@ -28,11 +29,11 @@ public class Solution {
         String prefix = strs[0];
 
         for (int i = 1; i < strs.length; i++) {
-            while (!strs[i].startsWith(prefix)) {
-                if (prefix.length() == 0) {
+            while (!strs[i].startsWith(prefix)) {       // 如果不包含此前缀，缩小前缀继续比对
+                if (prefix.length() == 0) {             // 如果前缀长度已缩小为0，仍没有符合的，直接返回空串
                     return "";
                 }
-                prefix = prefix.substring(0, prefix.length() - 1);
+                prefix = prefix.substring(0, prefix.length() - 1);  // 缩小前缀
             }
         }
         return prefix;

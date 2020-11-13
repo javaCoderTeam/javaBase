@@ -21,11 +21,15 @@ public class ChoiceSort {
         int len = nums.length;
 
         for (int i = 0; i < len - 1; i++) {  // 循环不变量：[0, i) 有序，且该区间里所有元素就是最终排定的样子
-            int minIndex = i;               // 选择无序区间 [i, len - 1] 里最小的元素的索引，交换到下标 i,即为排序部分的开头
+            int minIndex = i;               // 选择无序区间 [i, len - 1] 里最小的元素的索引，交换到下标 i,即未排序部分的开头
             for (int j = i + 1; j < len; j++) {
                 if (nums[j] < nums[minIndex]) {
                     minIndex = j;
                 }
+            }
+
+            if (i == minIndex) {        // 索引相同，不交换
+                continue;
             }
 
             // 交换

@@ -3,6 +3,7 @@ package com.chen.algorithm.znn.string.test415;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/add-strings/solution/zi-fu-chuan-xiang-jia-by-leetcode-solution/
  * 415. 字符串相加
  * 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
  *
@@ -13,10 +14,10 @@ import org.junit.Test;
 public class Solution {
 
     public String addStrings(String num1, String num2) {
-        if (num1 == null) {
+        if (num1 == null || num1.length() == 0) {
             return num2;
         }
-        if (num2 == null) {
+        if (num2 == null || num2.length() == 0) {
             return num1;
         }
 

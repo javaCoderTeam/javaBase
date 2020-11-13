@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * https://leetcode-cn.com/problems/3sum/solution/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/
  * 15. 三数之和
  * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
  * 注意：答案中不可以包含重复的三元组。
@@ -117,10 +118,10 @@ public class Solution {
         Arrays.sort(nums);
         int len = nums.length;
         for (int i = 0; i < len; i++) {
-            if (nums[i] > 0) { // 第一个数大于0，后面的数是递增的，不会有等于0的组合，直接返回结果
+            if (nums[i] > 0) { // 剪枝，第一个数大于0，后面的数是递增的，不会有等于0的组合，直接返回结果
                 return ans;
             }
-            if (i > 0 && nums[i] == nums[i - 1]) { // 去重
+            if (i > 0 && nums[i] == nums[i - 1]) { // 剪枝，去重
                 continue;
             }
             int L = i + 1;
@@ -129,10 +130,10 @@ public class Solution {
                 int sum = nums[i] + nums[L] + nums[R];
                 if (sum == 0) {
                     ans.add(Arrays.asList(nums[i], nums[L], nums[R]));
-                    while (L < R && nums[L] == nums[L + 1]) { // 去重
+                    while (L < R && nums[L] == nums[L + 1]) { // 剪枝去重
                         L++;
                     }
-                    while (L < R && nums[R] == nums[R - 1]) { // 去重
+                    while (L < R && nums[R] == nums[R - 1]) { // 剪枝去重
                         R--;
                     }
                     L++;

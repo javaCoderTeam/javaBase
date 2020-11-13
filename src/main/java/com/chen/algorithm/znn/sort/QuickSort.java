@@ -43,6 +43,7 @@ public class QuickSort {
             }
             nums[hight] = nums[low];
         }
+        //System.out.println(low==hight);
         nums[low] = pivotValue;
         return low;
     }
