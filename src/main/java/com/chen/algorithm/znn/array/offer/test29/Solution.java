@@ -1,5 +1,7 @@
 package com.chen.algorithm.znn.array.offer.test29;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /**
@@ -18,7 +20,7 @@ import java.util.Arrays;
  */
 public class Solution {
 
-    public static int[] spiralOrder(int[][] matrix) {
+    public int[] spiralOrder(int[][] matrix) {
         if (matrix.length == 0) {
             return new int[0];
         }
@@ -54,7 +56,7 @@ public class Solution {
         return res;
     }
 
-    private static int[] spiralOrder1(int[][] matrix) {
+    public int[] spiralOrder1(int[][] matrix) {
         if (matrix == null || matrix.length == 0) return new int[0];
 
         int numEle = matrix.length * matrix[0].length;
@@ -87,7 +89,8 @@ public class Solution {
         return result;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
         int[] res = spiralOrder1(matrix);
         System.out.println(Arrays.toString(res));
