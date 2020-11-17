@@ -16,7 +16,7 @@ import java.util.Arrays;
  *
  * @author: zhunn
  * @Date: 2020-10-07 23:34
- * @Description: 最短无序连续子数组
+ * @Description: 最短无序连续子数组：排序对比原数组
  */
 public class Solution {
 
@@ -29,25 +29,41 @@ public class Solution {
         int[] snums = nums.clone();
         Arrays.sort(snums);
         int start = snums.length, end = 0;
+
+        for (int i = 0; i < snums.length; i++) {
+            if (snums[i] == nums[i]) {
+                continue;
+            }
+            start = Math.min(start, i);
+            end = Math.max(end, i);
+        }
+        return (end - start >= 0 ? end - start + 1 : 0);
+    }
+
+    public int findUnsortedSubarray2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int[] snums = nums.clone();
+        Arrays.sort(snums);
+        int start = snums.length, end = 0;
+
         for (int i = 0; i < snums.length; i++) {
             if (snums[i] != nums[i]) {
                 start = Math.min(start, i);
                 end = Math.max(end, i);
             }
         }
-        return (end - start >= 0 ? end - start + 1 : 0);
+        return (end - start) < 0 ? 0 : end - start + 1;
     }
-
 
     @Test
     public void testCase() {
-
-
         int[] n = {2, 6, 4, 8, 10, 9, 15};
 
         System.out.println(findUnsortedSubarray(n));
-
-
+        System.out.println(findUnsortedSubarray2(n));
     }
 
 

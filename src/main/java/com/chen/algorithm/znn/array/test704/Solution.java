@@ -1,5 +1,7 @@
 package com.chen.algorithm.znn.array.test704;
 
+import org.junit.Test;
+
 /**
  * 704. 二分查找
  * 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
@@ -21,7 +23,7 @@ public class Solution {
     /**
      * 适用于升序数组，可做相应调整适用降序数组
      */
-    public static int bsearch(int[] array, int target) {
+    public int bsearch(int[] array, int target) {
         if (array == null || array.length == 0
             /*|| target < array[0] || target > array[array.length - 1]*/) {
             return -1;
@@ -51,7 +53,7 @@ public class Solution {
      * 查找第一个与target相等的元素
      * 当key=array[mid]时， 往左边一个一个逼近，right = mid -1; 返回left
      */
-    public static int bsearch1(int[] array, int target) {
+    public int bsearch1(int[] array, int target) {
         if (array == null || array.length == 0
             /*|| target < array[0] || target > array[array.length - 1]*/) {
             return -1;
@@ -80,7 +82,7 @@ public class Solution {
      *
      * @return
      */
-    public static int bsearch2(int[] array, int target) {
+    public int bsearch2(int[] array, int target) {
         if (array == null || array.length == 0 /*|| target < array[0] || target > array[array.length - 1]*/) {
             return -1;
         }
@@ -123,7 +125,7 @@ public class Solution {
     /**
      * 查找第一个等于或者大于key的元素
      */
-    public static int bsearch3(int[] array, int target) {
+    public int bsearch3(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;
         }
@@ -143,7 +145,7 @@ public class Solution {
     /**
      * 查找第一个大于key的元素
      */
-    public static int bsearch4(int[] array, int target) {
+    public int bsearch4(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;
         }
@@ -163,7 +165,7 @@ public class Solution {
     /**
      * 查找最后一个等于或者小于key的元素
      */
-    public static int bsearch5(int[] array, int target) {
+    public int bsearch5(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;
         }
@@ -183,7 +185,7 @@ public class Solution {
     /**
      * 查找最后一个小于key的元素
      */
-    public static int bsearch6(int[] array, int target) {
+    public int bsearch6(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;
         }
@@ -200,9 +202,10 @@ public class Solution {
         return right;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] array = {1, 1, 3, 6, 6, 6, 7, 9, 17, 17};
-        int index = bsearch6(array, 0);
+        int index = bsearch6(array, 6);
         System.out.println(index);
     }
 }

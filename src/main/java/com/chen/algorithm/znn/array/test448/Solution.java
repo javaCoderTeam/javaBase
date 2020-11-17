@@ -19,36 +19,63 @@ import java.util.List;
  *
  * @author: zhunn
  * @Date: 2020-10-04 00:06
- * @@Description: zhunn 找到所有数组中消失的数字
+ * @@Description: zhunn 找到所有数组中消失的数字：迭代并赋值为负数
  */
 public class Solution {
 
 
     public List<Integer> findDisappearedNumbers(int[] nums) {
-
-        int temp = 0;
-        int nextIndex = 0;
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
 
         for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0) {
+                continue;
+            }
 
-            if (nums[i] > 0) {
-                temp = nums[i];
-                while (temp > 0) {
-                    nums[i] = 0;
-                    nextIndex = nums[temp - 1];
-                    nums[temp - 1] = -1;
-                    temp = nextIndex;
-                }
+            int temp = nums[i];
+            while (temp > 0) {
+                int nextIndex = nums[temp - 1];
+                nums[temp - 1] = -1;
+                temp = nextIndex;
             }
 
         }
 
-
         List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
+            if (nums[i] > 0) {
                 result.add(i + 1);
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * 官方解法
+     *
+     * @param nums
+     * @return
+     */
+    public List<Integer> findDisappearedNumbers1(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int newIndex = Math.abs(nums[i]) - 1;
+            if (nums[newIndex] > 0) {
+                nums[newIndex] *= -1;
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i <= nums.length; i++) {
+            if (nums[i - 1] > 0) {
+                result.add(i);
             }
         }
 
@@ -65,6 +92,5 @@ public class Solution {
         list.forEach(System.out::println);
 
     }
-
 
 }
