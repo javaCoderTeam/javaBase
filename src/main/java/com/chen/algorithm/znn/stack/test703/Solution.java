@@ -45,10 +45,10 @@ public class Solution {
         public int add(int num) {
 
             if (queue.size() < limit) {
-                queue.offer(num);
+                queue.add(num);
             } else if (queue.peek() < num) {
                 queue.poll();
-                queue.offer(num);
+                queue.add(num);
             }
 
             return queue.peek();

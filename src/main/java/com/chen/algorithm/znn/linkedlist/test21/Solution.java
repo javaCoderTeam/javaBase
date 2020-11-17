@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  * @Author: zhunn
  * @Date: 2020-09-06 01:43
- * @Description: 并两个有序链表
+ * @Description: 合并两个有序链表
  */
 public class Solution {
 

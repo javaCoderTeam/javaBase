@@ -1,5 +1,7 @@
 package com.chen.algorithm.znn.stack.test155;
 
+import org.junit.Test;
+
 import java.util.Stack;
 
 /**
@@ -54,5 +56,20 @@ public class Solution {
 
     public int getMin() {
         return minStack.peek();
+    }
+
+    @Test
+    public void test() {
+        Solution minStack = new Solution();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        int minRes = minStack.getMin();
+        System.out.println(minRes);
+        minStack.pop();
+        int topRes = minStack.top();
+        System.out.println(topRes);
+        int minRes2 = minStack.getMin();
+        System.out.println(minRes2);
     }
 }

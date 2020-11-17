@@ -15,7 +15,7 @@ import java.util.LinkedList;
  *
  * @Auther: zhunn
  * @Date: 2020/10/22 14:51
- * @Description: 1、遍历length-n+1；2、栈、3、双指针法
+ * @Description: 删除链表的倒数第N个节点 1、遍历length-n+1；2、栈、3、双指针法
  */
 public class Solution {
 
