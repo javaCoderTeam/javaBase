@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/26 16:55
- * @Description: 求数组中的第K个最大元素：1-暴力；2-优先级队列
+ * @Description: 求数组中的第K个最大元素：1-暴力；2-优先级队列 PriorityQueue-小根堆
  */
 public class Solution {
 
@@ -39,7 +39,7 @@ public class Solution {
     }
 
     public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>(k);
+        PriorityQueue<Integer> queue = new PriorityQueue<>(k);  //小根堆
         for (int i = 0; i < nums.length; i++) {
             if (queue.size() < k) {
                 queue.add(nums[i]);

@@ -37,25 +37,26 @@ public class Solution {
     public Stack<Integer> minStack = new Stack<>();
 
     public void push(Integer value) {
-        stack.push(value);
+        stack.push(value);  // 元素存入基础栈
 
-        if (minStack.isEmpty() || value < minStack.peek()) {
+        if (minStack.isEmpty() || value < minStack.peek()) {    // 元素满足条件就存入最小栈，比最小栈栈顶元素小也存入
             minStack.push(value);
         }
     }
 
     public void pop() {
-        if (stack.pop().equals(minStack.peek())) {
+
+        if (stack.pop().equals(minStack.peek())) {  // 删除基础栈 栈顶元素，如果最小栈栈顶元素等于被删除的元素，一并删除。
             minStack.pop();
         }
     }
 
     public int top() {
-        return stack.peek();
+        return stack.peek();  // 取出的是基础栈的栈顶元素
     }
 
     public int getMin() {
-        return minStack.peek();
+        return minStack.peek();     // 获取的是最小栈的栈顶元素
     }
 
     @Test

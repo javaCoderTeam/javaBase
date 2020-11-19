@@ -1,6 +1,4 @@
-package com.chen.algorithm.znn.stack.test703;
-
-import org.junit.Test;
+package com.chen.algorithm.znn.heap.test703;
 
 import java.util.PriorityQueue;
 
@@ -28,39 +26,34 @@ import java.util.PriorityQueue;
  * @Date: 2020/10/26 16:55
  * @Description: 求数组中的第K个最大元素：1-暴力；2-优先级队列
  */
-public class Solution {
+public class KthLargest {
 
-    class KthLargest {
-        private PriorityQueue<Integer> queue;
-        private int limit;
+    private PriorityQueue<Integer> queue;
+    private int limit;
 
-        public KthLargest(int size, int[] nums) {
-            this.limit = size;
-            queue = new PriorityQueue<>(limit);
-            for (int num : nums) {
-                add(num);
-            }
-        }
-
-        public int add(int num) {
-
-            if (queue.size() < limit) {
-                queue.add(num);
-            } else if (queue.peek() < num) {
-                queue.poll();
-                queue.add(num);
-            }
-
-            return queue.peek();
+    public KthLargest(int size, int[] nums) {
+        this.limit = size;
+        queue = new PriorityQueue<>(limit);
+        for (int num : nums) {
+            add(num);
         }
     }
 
+    public int add(int num) {
 
-    @Test
-    public void testCase() {
+        if (queue.size() < limit) {
+            queue.add(num);
+        } else if (queue.peek() < num) {
+            queue.poll();
+            queue.add(num);
+        }
+
+        return queue.peek();
+    }
+
+    public static void main(String[] args) {
         int[] n = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        KthLargest kthLargest = new KthLargest(2, n);
+        KthLargest kthLargest = new KthLargest(3, n);
         System.out.println(kthLargest.add(3));
-
     }
 }

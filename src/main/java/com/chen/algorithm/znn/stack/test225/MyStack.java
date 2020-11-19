@@ -17,7 +17,7 @@ import java.util.Queue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/26 22:20
- * @Description: 用两个队列实现一个栈, 官方解法
+ * @Description: 用两个队列实现一个栈, 官方解法：q2入栈，q1出栈（注意入栈逻辑）
  */
 public class MyStack {
 

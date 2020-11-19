@@ -31,14 +31,18 @@ import java.util.Stack;
  *
  * @Auther: zhunn
  * @Date: 2020/10/26 17:36
- * @Description: 用栈实现队列
+ * @Description: 用栈实现队列： s1入队列，s2出队列（注意出队列逻辑）
  */
 public class Solution {
 
     private Stack<Integer> stack1 = new Stack<>();
     private Stack<Integer> stack2 = new Stack<>();
+    private int front;
 
     public void push(Integer value) {
+        if (stack1.isEmpty()) {
+            front = value;
+        }
         stack1.push(value);
     }
 
@@ -56,16 +60,11 @@ public class Solution {
     }
 
     public Integer peek() {
-        if (stack1.isEmpty() && stack2.isEmpty()) {
-            return null;
+        if (!stack2.isEmpty()) {
+            return stack2.peek();
         }
 
-        if (stack2.isEmpty()) {
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
-        }
-        return stack2.peek();
+        return front;
     }
 
     public boolean empty() {

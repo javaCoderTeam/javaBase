@@ -31,7 +31,7 @@ public class Solution {
             }
         }
 
-        //PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.comparingInt(map::get));
+        //PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.comparingInt(key -> map.get(key)));
         PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
