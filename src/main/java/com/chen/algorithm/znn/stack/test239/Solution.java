@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
+ * https://leetcode-cn.com/problems/sliding-window-maximum/solution/shuang-xiang-dui-lie-jie-jue-hua-dong-chuang-kou-2/
  * 239. 滑动窗口最大值
  * 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
  * 返回滑动窗口中的最大值。
@@ -40,9 +41,7 @@ public class Solution {
      * @return
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
-        int n = nums.length;
-        if (n * k == 0) return new int[0];
-        if (k == 1) return nums;
+        if (nums == null || nums.length < 2) return nums;
 
         int[] res = new int[nums.length - k + 1];
         // 递减队列
@@ -70,7 +69,7 @@ public class Solution {
     }
 
     /**
-     * 采用双端队列存储数组下标
+     * 采用双端队列存储数组下标 （推荐）
      * https://leetcode-cn.com/problems/sliding-window-maximum/solution/shuang-xiang-dui-lie-jie-jue-hua-dong-chuang-kou-2/
      *
      * @param nums

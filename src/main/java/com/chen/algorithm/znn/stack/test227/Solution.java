@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.Stack;
 
 /**
+ * https://leetcode-cn.com/problems/basic-calculator-ii/solution/chai-jie-fu-za-wen-ti-shi-xian-yi-ge-wan-zheng-ji-/
  * 227. 基本计算器 II
  * 实现一个基本的计算器来计算一个简单的字符串表达式的值。
  * 字符串表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格  。 整数除法仅保留整数部分。
@@ -39,15 +40,15 @@ public class Solution {
         }
 
         Stack<Integer> stack = new Stack<>();
-        char sign = '+';
-        int num = 0;
+        char sign = '+';        // 记录 num 前的符号，初始化为 +
+        int num = 0;            // 记录算式中的数字
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
                 num = num * 10 + (c - '0');
             }
 
-            if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
+            if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {   //不只是遇到新的符号会触发入栈，当i走到了算式的尽头（i == s.size() - 1），也应该将前面的数字入栈，方便后续计算最终结果。
                 int pre;
                 if (sign == '+') {
                     stack.push(num);
@@ -76,5 +77,6 @@ public class Solution {
         vert();
         System.out.println(calculate("60+20-30+5/2 "));
     }
+
 
 }
