@@ -1,6 +1,7 @@
 package com.chen.algorithm.znn.linkedlist.test83;
 
 import com.chen.algorithm.znn.linkedlist.ListNode;
+import org.junit.Test;
 
 /**
  * 83. 删除排序链表中的重复元素
@@ -14,7 +15,7 @@ import com.chen.algorithm.znn.linkedlist.ListNode;
  *
  * @Author: zhunn
  * @Date: 2020-10-08 02:19
- * @Description: 删除排序链表中的重复元素
+ * @Description: 删除排序链表中的重复元素：同删除排序数组中的重复元素
  */
 public class Solution {
 
@@ -44,5 +45,22 @@ public class Solution {
         return head;
     }
 
+    @Test
+    public void test() {
+        ListNode five = new ListNode(3);
+        ListNode four = new ListNode(3, five);
+        ListNode three = new ListNode(2, four);
+        ListNode two = new ListNode(1, three);
+        ListNode head = new ListNode(1, two);
+
+        ListNode result = deleteDuplicates(head);
+
+        ListNode a = result;
+        while (a != null) {
+            System.out.println(a.val);
+            a = a.next;
+        }
+        //System.out.println(result);
+    }
 
 }

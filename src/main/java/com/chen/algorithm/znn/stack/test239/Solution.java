@@ -132,4 +132,26 @@ public class Solution {
         int k = 3;
         System.out.println(Arrays.toString(maxSlidingWindow(nums, k)));
     }
+
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        if (nums == null || nums.length < 2) {
+            return nums;
+        }
+
+        int[] res = new int[nums.length - k + 1];
+        LinkedList<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!queue.isEmpty() && nums[i] > queue.peekLast()) {
+                queue.pollLast();
+            }
+            queue.addLast(nums[i]);
+            if (i >= k && nums[i - k] == queue.peekFirst()) {
+                queue.pollFirst();
+            }
+            if (i + 1 >= k) {
+                res[i + 1 - k] = queue.peekFirst();
+            }
+        }
+        return res;
+    }
 }

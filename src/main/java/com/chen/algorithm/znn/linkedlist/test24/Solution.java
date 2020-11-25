@@ -19,7 +19,7 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/10/23 10:48
- * @Description: 两两交换链表中结点：1-递归，2-迭代
+ * @Description: 两两交换链表中结点：1-递归，2-迭代(推荐)
  */
 public class Solution {
 
@@ -41,7 +41,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代
+     * 2-迭代（推荐）
      *
      * @param head
      * @return
@@ -59,11 +59,11 @@ public class Solution {
             ListNode node1 = temp.next;
             ListNode node2 = temp.next.next;
 
-            temp.next = node2;
             node1.next = node2.next;
-            node2.next = node1;
+            node2.next = temp.next;     //等价于 node2.next = node1;
+            temp.next = node2;      //两两交换  画图演示，想着图写代码
 
-            temp = node1;
+            temp = node1;   // 临时结点往前推进
         }
         return dummyHead.next;
     }
@@ -87,9 +87,9 @@ public class Solution {
             ListNode node1 = head;
             ListNode node2 = head.next;
 
-            temp.next = node2;
             node1.next = node2.next;
-            node2.next = node1;
+            node2.next = temp.next;
+            temp.next = node2;
 
             temp = node1;
             head = node1.next;
@@ -110,12 +110,12 @@ public class Solution {
         l1_3.next = l1_4;
         l1_4.next = l1_5;
 
-        ListNode result = swapPairs3(l1_1);
+        ListNode result = swapPairs2(l1_1);
 
-        System.out.println(result.val);
-        System.out.println(result.next.val);
-        System.out.println(result.next.next.val);
-        System.out.println(result.next.next.next.val);
-        System.out.println(result.next.next.next.next.val);
+        ListNode a = result;
+        while (a != null) {
+            System.out.println(a.val);
+            a = a.next;
+        }
     }
 }
