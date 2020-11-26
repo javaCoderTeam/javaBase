@@ -2,6 +2,7 @@ package com.chen.algorithm.znn.linkedlist.test142;
 
 
 import com.chen.algorithm.znn.linkedlist.ListNode;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +30,7 @@ import java.util.Set;
  * @Auther: zhunn
  * @Date: 2020/10/23 16:10
  * @Description: 环形链表二，找出入环点
- * 方法：1-哈希表，2-快慢指针
+ * 方法：1-哈希表，2-快慢指针(推荐)
  */
 public class Solution {
 
@@ -39,7 +40,7 @@ public class Solution {
      * @param head
      * @return
      */
-    public ListNode detectCycle1(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
             return null;
         }
@@ -85,4 +86,21 @@ public class Solution {
         return slow;
     }
 
+    @Test
+    public void test() {
+        ListNode l1_1 = new ListNode(6);
+        ListNode l1_2 = new ListNode(2);
+        ListNode l1_3 = new ListNode(8);
+        ListNode l1_4 = new ListNode(7);
+        ListNode l1_5 = new ListNode(5);
+
+        l1_1.next = l1_2;
+        l1_2.next = l1_3;
+        l1_3.next = l1_4;
+        l1_4.next = l1_5;
+        l1_5.next = l1_3;
+
+        ListNode result = detectCycle2(l1_1);
+        System.out.println(result.val);
+    }
 }

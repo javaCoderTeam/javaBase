@@ -4,6 +4,8 @@ import com.chen.algorithm.znn.linkedlist.ListNode;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+ * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/solution/tu-jie-xiang-jiao-lian-biao-by-user7208t/
  * 160. 相交链表
  * 编写一个程序，找到两个单链表相交的起始节点。
  * 如下面的两个链表：
@@ -24,7 +26,7 @@ import org.junit.Test;
  *
  * @Author: zhunn
  * @Date: 2020-10-22 17:40
- * @Description: 相交链表
+ * @Description: 相交链表：双指针法
  */
 public class Solution {
 
@@ -40,12 +42,12 @@ public class Solution {
             a = a == null ? headB : a.next;
             b = b == null ? headA : b.next;
         }
-        return b;
+        return a;
     }
 
     @Test
     public void test() {
-        ListNode l1_1 = new ListNode(4);
+        ListNode l1_1 = new ListNode(6);
         ListNode l1_2 = new ListNode(1);
         ListNode l1_3 = new ListNode(8);
         ListNode l1_4 = new ListNode(7);

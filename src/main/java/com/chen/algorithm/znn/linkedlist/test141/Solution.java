@@ -1,6 +1,7 @@
 package com.chen.algorithm.znn.linkedlist.test141;
 
 import com.chen.algorithm.znn.linkedlist.ListNode;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class Solution {
      * @param head
      * @return
      */
-    public boolean hasCycle1(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
@@ -98,4 +99,21 @@ public class Solution {
         return false;
     }
 
+    @Test
+    public void test() {
+        ListNode l1_1 = new ListNode(6);
+        ListNode l1_2 = new ListNode(1);
+        ListNode l1_3 = new ListNode(8);
+        ListNode l1_4 = new ListNode(7);
+        ListNode l1_5 = new ListNode(5);
+
+        l1_1.next = l1_2;
+        l1_2.next = l1_3;
+        l1_3.next = l1_4;
+        l1_4.next = l1_5;
+        l1_5.next = l1_3;
+
+        boolean result = hasCycle(l1_1);
+        System.out.println(result);
+    }
 }
