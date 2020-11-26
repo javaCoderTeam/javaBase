@@ -31,7 +31,7 @@ import java.util.Stack;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 16:35
- * @Description: 验证二叉搜索树：1-递归，2-中序遍历
+ * @Description: 验证二叉搜索树：1-递归，2-中序遍历（推荐）
  */
 public class Solution {
 

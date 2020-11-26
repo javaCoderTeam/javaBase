@@ -24,7 +24,7 @@ import java.util.Queue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 11:03
- * @Description: 对称二叉树：1-递归，2-迭代
+ * @Description: 对称二叉树：1-递归，2-迭代（推荐）
  */
 public class Solution {
 

@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @Auther: zhunn
  * @Date: 2020/10/28 10:28
- * @Description: 二叉树的后序遍历：1-递归；2-迭代（时间复杂度和空间复杂度都是O(n)）
+ * @Description: 二叉树的后序遍历：1-递归；2-(推荐)迭代（时间复杂度和空间复杂度都是O(n)） 两种方式都要会
  */
 public class Solution {
 
@@ -40,7 +40,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代法，两个栈实现
+     * 2-迭代法，两个栈实现(推荐)
      *
      * @param root
      * @return
@@ -52,12 +52,12 @@ public class Solution {
         Stack<TreeNode> stack1 = new Stack<>();
         Stack<TreeNode> stack2 = new Stack<>();
 
-        stack1.push(root);
+        stack1.push(root);      // 先放根
         while (!stack1.isEmpty()) {
-            TreeNode node = stack1.pop();
+            TreeNode node = stack1.pop();   // 出栈压入stack2的栈底
             stack2.push(node);
 
-            if (node.left != null) {
+            if (node.left != null) {        // 先入左子树，再出栈入stack2,迭代出栈就会先出
                 stack1.push(node.left);
             }
 

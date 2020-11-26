@@ -52,7 +52,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代
+     * 2-迭代 用queue层次遍历交换处理
      *
      * @param root
      * @return
@@ -62,19 +62,19 @@ public class Solution {
             return root;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();     //将二叉树中的节点逐层放入队列中，再迭代处理队列中的元素
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+            TreeNode node = queue.poll();   // 如果当前节点的左子树不为空，则放入队列等待后续处理
 
             TreeNode temp = node.right;
             node.right = node.left;
             node.left = temp;
 
-            if (node.left != null) {
+            if (node.left != null) {        //如果当前节点的左子树不为空，则放入队列等待后续处理
                 queue.add(node.left);
             }
-            if (node.right != null) {
+            if (node.right != null) {       //如果当前节点的右子树不为空，则放入队列等待后续处理
                 queue.add(node.right);
             }
         }

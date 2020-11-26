@@ -22,7 +22,7 @@ import java.util.Queue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/28 17:41
- * @Description: 二叉树的右视图：1-广度优先搜索；2-深度优先搜索
+ * @Description: 二叉树的右视图：1-广度优先搜索，即层次遍历（推荐）；2-深度优先搜索
  */
 public class Solution {
 

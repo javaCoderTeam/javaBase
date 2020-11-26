@@ -43,9 +43,10 @@ public class Solution {
             return null;
         }
 
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> res = new LinkedList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             List<Integer> levelList = new ArrayList<>();

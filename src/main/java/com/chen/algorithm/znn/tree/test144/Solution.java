@@ -14,7 +14,7 @@ import java.util.Stack;
  *
  * @Auther: zhunn
  * @Date: 2020/10/28 16:25
- * @Description: 二叉树的前序遍历：1-递归；2-迭代
+ * @Description: 二叉树的前序遍历：1-递归；2-迭代 (推荐) 两种方式都要会
  */
 public class Solution {
 
@@ -43,6 +43,12 @@ public class Solution {
         preOrder(root.right, res);
     }
 
+    /**
+     * 2-迭代 (推荐)
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> preorderTraversal2(TreeNode root) {
         if (root == null) {
             return null;

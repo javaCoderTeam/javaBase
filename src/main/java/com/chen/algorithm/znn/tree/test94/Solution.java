@@ -44,7 +44,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代
+     * 2-迭代，栈
      *
      * @param root
      * @return
@@ -59,14 +59,14 @@ public class Solution {
         TreeNode curr = root;
 
         while (!stack.isEmpty() || curr != null) {
-            while (curr != null) {
+            while (curr != null) {      // 当前节点不为空，一直将左子树入栈
                 stack.push(curr);
                 curr = curr.left;
             }
 
-            TreeNode temp = stack.pop();
-            res.add(temp.val);
-            curr = temp.right;
+            TreeNode temp = stack.pop();    // 出栈
+            res.add(temp.val);          // 操作数据
+            curr = temp.right;          // 对出栈的节点检查是有否还有左节点，有的话继续入栈，没有的话就操作叶子节点的上一个节点
         }
         return res;
     }
