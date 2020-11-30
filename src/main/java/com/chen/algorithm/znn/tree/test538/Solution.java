@@ -5,6 +5,7 @@ import com.chen.algorithm.znn.tree.TreeNode;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/convert-bst-to-greater-tree/solution/ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-sh-14/
  * 538. 把二叉搜索树转换为累加树（需要看leetcode题上面的图）
  * 给出二叉 搜索 树的根节点，该树的节点值各不相同，请你将其转换为累加树（Greater Sum Tree），使每个节点 node 的新值等于原树中大于或等于 node.val 的值之和。
  * 提醒一下，二叉搜索树满足下列约束条件：
@@ -27,19 +28,22 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 11:39
- * @Description: 把二叉搜索树转换成累加树
+ * @Description: 把二叉搜索树转换成累加树：递归-反序中序遍历
  */
 public class Solution {
 
     int sum = 0;
 
     public TreeNode convertBST(TreeNode root) {
-        if (root != null) {
-            convertBST(root.right);
-            sum += root.val;
-            root.val = sum;
-            convertBST(root.left);
+        if (root == null) {
+            return root;
         }
+
+        convertBST(root.right);
+        sum += root.val;
+        root.val = sum;
+        convertBST(root.left);
+
         return root;
     }
 

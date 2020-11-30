@@ -1,6 +1,8 @@
 package com.chen.algorithm.znn.tree.test199;
 
+import com.alibaba.fastjson.JSON;
 import com.chen.algorithm.znn.tree.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,7 +29,7 @@ import java.util.Queue;
 public class Solution {
 
     /**
-     * 1-广度优先搜索
+     * 1-广度优先搜索（推荐）
      *
      * @param root
      * @return
@@ -83,5 +85,15 @@ public class Solution {
         depth++;
         dfs(root.right, depth);
         dfs(root.left, depth);
+    }
+
+    @Test
+    public void test() {
+        TreeNode left = new TreeNode(9);
+        TreeNode right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
+        TreeNode root = new TreeNode(3, left, right);
+
+        List<Integer> res = rightSideView(root);
+        System.out.println(JSON.toJSON(res));
     }
 }

@@ -14,21 +14,21 @@ import java.util.Queue;
  * 翻转一棵二叉树。
  * 示例：
  * 输入：
- *      4
- *    /   \
- *   2     7
- *  / \   / \
+ * 4
+ * /   \
+ * 2     7
+ * / \   / \
  * 1   3 6   9
  * 输出：
- *      4
- *    /   \
- *   7     2
- *  / \   / \
+ * 4
+ * /   \
+ * 7     2
+ * / \   / \
  * 9   6 3   1
  *
  * @Auther: zhunn
  * @Date: 2020/10/28 17:58
- * @Description: 翻转二叉树：1-递归；2-迭代
+ * @Description: 翻转二叉树：1-递归；2-迭代(推荐)
  */
 public class Solution {
 
@@ -52,7 +52,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代 用queue层次遍历交换处理
+     * 2-迭代 用queue层次遍历交换处理(推荐)
      *
      * @param root
      * @return
@@ -65,7 +65,7 @@ public class Solution {
         Queue<TreeNode> queue = new LinkedList<>();     //将二叉树中的节点逐层放入队列中，再迭代处理队列中的元素
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();   // 如果当前节点的左子树不为空，则放入队列等待后续处理
+            TreeNode node = queue.poll();   // //每次都从队列中拿一个节点，并交换这个节点的左右子树
 
             TreeNode temp = node.right;
             node.right = node.left;

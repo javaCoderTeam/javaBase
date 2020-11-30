@@ -70,7 +70,7 @@ public class Solution {
     }
 
     /**
-     * 使用java的LinkedList的性质，从上到下遍历，将新遍历的层结果集放入linkedlist的头部
+     * （推荐）使用java的LinkedList的性质，从上到下遍历，将新遍历的层结果集放入linkedlist的头部
      * @param root
      * @return
      */

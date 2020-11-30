@@ -44,7 +44,7 @@ public class Solution {
     }
 
     /**
-     * 2-迭代，栈
+     * 2-迭代，栈(推荐)
      *
      * @param root
      * @return

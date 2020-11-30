@@ -22,7 +22,7 @@ import java.util.Queue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 17:57
- * @Description: 二叉树的最大深度：1-递归；2-广度优先搜索（BFS-层次遍历）
+ * @Description: 二叉树的最大深度：1-递归；2-广度优先搜索（BFS-层次遍历）(推荐)
  */
 public class Solution {
 
@@ -37,7 +37,7 @@ public class Solution {
     }
 
     /**
-     * 2-广度优先搜索（层次遍历）
+     * 2-广度优先搜索（层次遍历）(推荐)
      *
      * @param root
      * @return

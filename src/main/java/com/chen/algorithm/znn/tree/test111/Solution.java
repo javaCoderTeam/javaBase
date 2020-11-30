@@ -20,7 +20,7 @@ import java.util.Queue;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 18:40
- * @Description: 二叉树的最小深度：1-深度优先搜索（DFS），即递归；2-广度优先搜索（BFS）
+ * @Description: 二叉树的最小深度：1-深度优先搜索（DFS），即递归；2-广度优先搜索（BFS）(推荐)
  */
 public class Solution {
 
@@ -60,7 +60,7 @@ public class Solution {
     }
 
     /**
-     * 2-广度优先搜索（BFS）
+     * 2-广度优先搜索（BFS）(推荐)
      *
      * @param root
      * @return
@@ -101,7 +101,7 @@ public class Solution {
         TreeNode right = new TreeNode(7, new TreeNode(15), new TreeNode(20));
         TreeNode root = new TreeNode(3, left, right);
 
-        int res = minDepth1(left);
+        int res = minDepth2(left);
         System.out.println(res);
     }
 }

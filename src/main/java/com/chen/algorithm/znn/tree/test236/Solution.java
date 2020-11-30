@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/er-cha-shu-de-zui-jin-gong-gong-zu-xian-by-leetc-2/
  * 236. 二叉树的最近公共祖先 （需要看leetcode题上面的图）
  * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
  * 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
@@ -24,10 +25,18 @@ import java.util.Set;
  *
  * @Auther: zhunn
  * @Date: 2020/10/29 15:29
- * @Description: 二叉树的最近公共祖先：1-递归；2-存储父节点
+ * @Description: 二叉树的最近公共祖先：1-递归(推荐)；2-存储父节点
  */
 public class Solution {
 
+    /**
+     * 1-递归(推荐)
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
@@ -92,7 +101,7 @@ public class Solution {
         TreeNode right = new TreeNode(2);
         TreeNode root = new TreeNode(8, left, right);
 
-        TreeNode res = lowestCommonAncestor2(root, left, right);
+        TreeNode res = lowestCommonAncestor1(root, left, right);
         System.out.println(res.val);
     }
 
