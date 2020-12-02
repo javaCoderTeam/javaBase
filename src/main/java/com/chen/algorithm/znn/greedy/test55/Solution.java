@@ -24,6 +24,7 @@ public class Solution {
 
     /**
      * 1-贪心算法
+     * 倒序遍历，如果n-2下标能到达n-1下标，意味着前面只要有坐标能够到达n-2即可完成跳跃，于是末尾位置更改为n-2，这样构成一个子问题，迭代求解。
      *
      * @param nums
      * @return
@@ -35,7 +36,7 @@ public class Solution {
 
         int lastPosition = nums.length - 1;
         for (int i = nums.length - 1; i >= 0; i--) {
-            if (nums[i] + i >= lastPosition) {
+            if (i + nums[i] >= lastPosition) {
                 lastPosition = i;
             }
         }

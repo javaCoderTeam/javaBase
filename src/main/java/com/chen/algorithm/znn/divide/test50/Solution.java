@@ -18,7 +18,7 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/11/2 16:13
- * @Description: Pow(x, n)：1-递归；2-迭代
+ * @Description: Pow(x, n)：1-递归；2-迭代（推荐）
  */
 public class Solution {
 
@@ -81,6 +81,26 @@ public class Solution {
 
     @Test
     public void test() {
-        System.out.println(myPow2(2.0, 5));
+        System.out.println(myPow(2.0, 10));
+    }
+
+    public double myPow(double x, int n) {
+        if (n == 0) {
+            return 1.0;
+        }
+        if (n < 0) {
+            n = -n;
+            x = 1 / x;
+        }
+        double res = 1d;
+        double x_con = x;
+        while (n > 0) {
+            if (n % 2 == 1) {
+                res = res * x_con;
+            }
+            x_con = x_con * x_con;
+            n = n / 2;
+        }
+        return res;
     }
 }

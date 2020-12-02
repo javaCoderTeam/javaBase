@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @Auther: zhunn
  * @Date: 2020/10/24 17:23
- * @Description: 括号生成：1-dfs
+ * @Description: 括号生成：1-dfs（推荐）
  */
 public class Solution {
 
@@ -33,6 +33,11 @@ public class Solution {
         return res;
     }
 
+    /**
+     * @param left   左边剩余的括号数
+     * @param right  右边剩余的括号数
+     * @param curStr 括号结果
+     */
     private void dfs(int left, int right, String curStr) {
         // 左右括号都不剩余了，递归终止
         if (left == 0 && right == 0) {
