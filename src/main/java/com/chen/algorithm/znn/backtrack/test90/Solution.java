@@ -31,19 +31,19 @@ public class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums); //排序
-        backtrack(nums, 0, new ArrayList<>(), res);
+        backtrack(0, nums, new ArrayList<>(), res);
         return res;
     }
 
-    private void backtrack(int[] nums, int start, ArrayList<Integer> curList, List<List<Integer>> ans) {
-        ans.add(new ArrayList<>(curList));
+    private void backtrack(int start, int[] nums, List<Integer> curList, List<List<Integer>> res) {
+        res.add(new ArrayList<>(curList));
         for (int i = start; i < nums.length; i++) {
             //和上个数字相等就跳过
             if (i > start && nums[i] == nums[i - 1]) {
                 continue;
             }
             curList.add(nums[i]);
-            backtrack(nums, i + 1, curList, ans);
+            backtrack(i + 1, nums, curList, res);
             curList.remove(curList.size() - 1);
         }
     }

@@ -44,7 +44,7 @@ import java.util.HashSet;
  *
  * @Auther: zhunn
  * @Date: 2020/11/3 13:54
- * @Description: 有效的数独：1-哈希数组；2-位运算数组
+ * @Description: 有效的数独：1-哈希数组（没有空间要求也可以）；2-位运算数组；3-二维数组（推荐）
  */
 public class Solution {
 
@@ -105,13 +105,19 @@ public class Solution {
         return true;
     }
 
+    /**
+     * 二维数组，第一维标识位置，第二维标识1-9数字
+     *
+     * @param board
+     * @return
+     */
     public boolean isValidSudoku1(char[][] board) {
         int[][] row = new int[9][10];   // 哈希表存储每一行的每个数是否出现过，默认初始情况下，每一行每一个数都没有出现过
         // 整个board有9行，第二维的维数10是为了让下标有9，和数独中的数字9对应。
         int[][] col = new int[9][10];   // 存储每一列的每个数是否出现过，默认初始情况下，每一列的每一个数都没有出现过
         int[][] box = new int[9][10];   // 存储每一个box的每个数是否出现过，默认初始情况下，在每个box中，每个数都没有出现过。整个board有9个box。
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
+        for (int i = 0; i < 9; i++) {   //行
+            for (int j = 0; j < 9; j++) {//列
                 if (board[i][j] == '.') {
                     continue;
                 }

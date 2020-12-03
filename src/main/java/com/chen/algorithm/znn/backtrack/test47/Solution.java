@@ -34,17 +34,17 @@ public class Solution {
         Arrays.sort(nums);
 
         boolean[] used = new boolean[nums.length];
-        dfs(nums, nums.length, 0, used, new ArrayList<>(), res);
+        backtrack(0, nums.length, nums, used, new ArrayList<>(), res);
         return res;
     }
 
-    private void dfs(int[] nums, int len, int depth, boolean[] used, List<Integer> curList, List<List<Integer>> res) {
+    private void backtrack(int depth, int len, int[] nums, boolean[] used, List<Integer> curList, List<List<Integer>> res) {
         if (depth == len) {
             res.add(new ArrayList<>(curList));
             return;
         }
 
-        for (int i = 0; i < len; ++i) {
+        for (int i = 0; i < len; i++) {
             if (used[i]) {
                 continue;
             }
@@ -57,7 +57,7 @@ public class Solution {
 
             curList.add(nums[i]);
             used[i] = true;
-            dfs(nums, len, depth + 1, used, curList, res);
+            backtrack(depth + 1, len, nums, used, curList, res);
             // 回溯部分的代码，和 dfs 之前的代码是对称的
             used[i] = false;
             curList.remove(curList.size() - 1);
@@ -68,5 +68,37 @@ public class Solution {
     public void testCase() {
         int[] nums = {1, 1, 2};
         System.out.println(JSONObject.toJSONString(permuteUnique(nums)));
+        System.out.println(JSONObject.toJSONString(permuteUnique2(nums)));
+    }
+
+    public List<List<Integer>> permuteUnique2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        boolean[] used = new boolean[nums.length];
+        dfs(0, nums.length, nums, used, new ArrayList<>(), res);
+        return res;
+    }
+
+    private void dfs(int depth, int len, int[] nums, boolean[] used, List<Integer> curList, List<List<Integer>> res) {
+        if (depth == len) {
+            res.add(new ArrayList<>(curList));
+            return;
+        }
+        for (int i = 0; i < len; i++) {
+            if (used[i]) {
+                continue;
+            }
+            if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]) {
+                continue;
+            }
+            used[i] = true;
+            curList.add(nums[i]);
+            dfs(depth + 1, len, nums, used, curList, res);
+            curList.remove(curList.size() - 1);
+            used[i] = false;
+        }
     }
 }

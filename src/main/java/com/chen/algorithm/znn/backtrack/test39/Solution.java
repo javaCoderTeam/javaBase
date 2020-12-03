@@ -43,7 +43,7 @@ public class Solution {
         }
         List<List<Integer>> res = new ArrayList<>();
         // 排序是剪枝的前提
-        Arrays.sort(candidates);
+        //Arrays.sort(candidates);
         backtrack(0, target, candidates, new ArrayList<>(), res);
         return res;
     }
