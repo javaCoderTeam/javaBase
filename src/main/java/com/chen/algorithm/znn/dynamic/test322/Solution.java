@@ -35,23 +35,31 @@ import java.util.Arrays;
  */
 public class Solution {
 
+    /**
+     * 动态规划-优化空间（推荐）
+     *
+     * @param coins
+     * @param amount
+     * @return
+     */
     public int coinChange(int[] coins, int amount) {
         if (coins == null || coins.length == 0) {
+            if(amount == 0){
+                return 0;
+            }
             return -1;
         }
 
-        int max = amount + 1;
-        int[] dp = new int[amount + 1]; // 给 0 占位
-        Arrays.fill(dp, max);  // 注意：因为要比较的是最小值，这个不可能的值就得赋值成为一个最大值
+        int[] dp = new int[amount + 1];     // 状态转移方程-凑成amount数值需要的最少硬币数，给 0 占位
+        Arrays.fill(dp, amount + 1);    // 注意：因为要比较的是最小值，这个不可能的值就得赋值成为一个最大值
+        dp[0] = 0;          // 理解 dp[0] = 0 的合理性，单独一枚硬币如果能够凑出面值，符合最优子结构
 
-        dp[0] = 0;  // 理解 dp[0] = 0 的合理性，单独一枚硬币如果能够凑出面值，符合最优子结构
-        for (int i = 1; i <= amount; i++) {
-            for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) {
-                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
-                }
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
             }
         }
+
         return dp[amount] > amount ? -1 : dp[amount];
     }
 

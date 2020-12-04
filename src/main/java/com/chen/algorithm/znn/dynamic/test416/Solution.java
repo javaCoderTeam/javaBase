@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /**
  * https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/
+ * https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/fen-ge-deng-he-zi-ji-by-leetcode-solution/
  * 416. 分割等和子集
  * 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
  * 注意:
@@ -20,7 +21,7 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/11/5 18:27
- * @Description: 分割等和子集：1-动态规划, 0-1背包问题；2-动态规划-剪枝；3-动态规划-优化空间
+ * @Description: 分割等和子集：1-动态规划, 0-1背包问题；2-动态规划-剪枝(推荐)；3-动态规划-优化空间(推荐2演化到3)
  */
 public class Solution {
 
@@ -54,13 +55,8 @@ public class Solution {
 
         for (int i = 1; i < len; i++) {     //再填表格后面几行
             for (int j = 0; j <= target; j++) {
-                dp[i][j] = dp[i - 1][j];    //直接把结果从上面一行抄下来，然后再修正
-                if (nums[i] == j) {
-                    dp[i][j] = true;
-                    continue;
-                }
-
-                if (nums[i] < j) {
+                dp[i][j] = dp[i - 1][j];    //如果不选取nums[i]，则dp[i][j]=dp[i−1][j]；
+                if (nums[i] <= j) {
                     dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
                 }
             }
@@ -99,9 +95,9 @@ public class Solution {
 
         for (int i = 1; i < len; i++) {
             for (int j = 0; j <= target; j++) {
-                dp[i][j] = dp[i - 1][j];
+                dp[i][j] = dp[i - 1][j];        //如果不选取nums[i]，则dp[i][j]=dp[i−1][j]；
                 if (nums[i] <= j) {
-                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
+                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];  //如果选取nums[i]，则dp[i][j]=dp[i−1][j−nums[i]]。选取后j - nums[i]+nums[i]刚好等于j
                 }
 
                 if (dp[i][target]) {  // 由于状态转移方程的特殊性，提前结束，可以认为是剪枝操作
@@ -154,6 +150,7 @@ public class Solution {
     @Test
     public void test() {
         int[] nums = {1, 5, 11, 5};
-        System.out.println(canPartition(nums));
+        System.out.println(canPartition2(nums));
+        System.out.println(canPartition3(nums));
     }
 }

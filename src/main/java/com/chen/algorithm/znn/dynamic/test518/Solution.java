@@ -32,6 +32,13 @@ import org.junit.Test;
  */
 public class Solution {
 
+    /**
+     * 推荐
+     *
+     * @param amount
+     * @param coins
+     * @return
+     */
     public int change(int amount, int[] coins) {
         if (coins == null || coins.length == 0) {
             if (amount == 0) {
@@ -51,32 +58,32 @@ public class Solution {
         return dp[amount];
     }
 
-    public int change2(int amount, int[] coins) {
-        if (coins == null || coins.length == 0) {
-            if (amount == 0) {
-                return 1;
-            }
-            return 0;
-        }
-
-        int[] dp = new int[amount + 1];
-        dp[0] = 1;
-
-        for (int coin : coins) { // 枚举硬币
-            for (int x = 1; x <= amount; x++) { // 枚举金额
-                if (coin > x) {
-                    continue; // coin不能大于金额
-                }
-                dp[x] = dp[x] + dp[x - coin];
-            }
-        }
-        return dp[amount];
-    }
+    //public int change2(int amount, int[] coins) {
+    //    if (coins == null || coins.length == 0) {
+    //        if (amount == 0) {
+    //            return 1;
+    //        }
+    //        return 0;
+    //    }
+    //
+    //    int[] dp = new int[amount + 1];
+    //    dp[0] = 1;
+    //
+    //    for (int coin : coins) { // 枚举硬币
+    //        for (int x = 1; x <= amount; x++) { // 枚举金额
+    //            if (coin > x) {
+    //                continue; // coin不能大于金额
+    //            }
+    //            dp[x] = dp[x] + dp[x - coin];
+    //        }
+    //    }
+    //    return dp[amount];
+    //}
 
     @Test
     public void test() {
         int amount = 5;
         int[] coins = {1, 2, 5};
-        System.out.println(change2(amount, coins));
+        System.out.println(change(amount, coins));
     }
 }

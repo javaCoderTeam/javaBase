@@ -81,6 +81,7 @@ public class Solution {
     public void test() {
         int[] prices = {1, 3, 2, 8, 4, 9};
         int fee = 2;
+        System.out.println(maxProfit(prices, fee));
         System.out.println(maxProfit2(prices, fee));
     }
 }

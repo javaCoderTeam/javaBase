@@ -98,43 +98,13 @@ public class Solution {
         // i(1 ~ len)表示遍历（不一定选）了 i 个元素，j(0 ~ sum) 表示它们的和
         for (int i = 1; i <= len; i++) {
             for (int j = 0; j <= target; j++) {
-                if (j - nums[i - 1] < 0) {  // 装不下（不选当前元素）
-                    dp[i][j] = dp[i - 1][j];
-                } else {                    // 可装可不装（当前元素可选可不选）
+                dp[i][j] = dp[i - 1][j]; // 装不下（不选当前元素）
+                if (nums[i - 1] <= j) {   // 可装可不装（当前元素可选可不选）
                     dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
                 }
             }
         }
 
-        return dp[len][target];
-    }
-
-    public int findTargetSumWays2_test(int[] nums, int S) {
-        int sum = 0;
-        for (int num : nums) {
-            sum += num;
-        }
-        if (((sum + S) & 1) == 1) { // 奇数
-            return 0;
-        }
-        if (S > sum) {
-            return 0;
-        }
-
-        int target = (S + sum) >> 1;
-        int len = nums.length;
-        int[][] dp = new int[len + 1][target + 1];
-        dp[0][0] = 1;
-
-        for (int i = 1; i <= len; i++) {
-            for (int j = 0; j <= target; j++) {
-                if (j < nums[i - 1]) {
-                    dp[i][j] = dp[i - 1][j];
-                } else {
-                    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
-                }
-            }
-        }
         return dp[len][target];
     }
 
@@ -165,6 +135,7 @@ public class Solution {
     @Test
     public void test() {
         int[] nums = {1, 1, 1, 1, 1};
+        System.out.println(findTargetSumWays2(nums, 3));
         System.out.println(findTargetSumWays3(nums, 3));
     }
 }

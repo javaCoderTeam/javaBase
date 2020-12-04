@@ -16,7 +16,7 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/11/3 22:03
- * @Description: 最佳买卖股票时机含冷冻期：1-动态规划；2-动态规划-优化空间
+ * @Description: 最佳买卖股票时机含冷冻期：1-动态规划（推荐）；2-动态规划-优化空间
  */
 public class Solution {
 
@@ -84,5 +84,6 @@ public class Solution {
     public void test() {
         int[] prices = {1, 2, 3, 0, 2};
         System.out.println(maxProfit(prices));
+        System.out.println(maxProfit2(prices));
     }
 }

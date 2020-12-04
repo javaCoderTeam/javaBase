@@ -1,6 +1,14 @@
 package com.chen.algorithm.znn.backtrack;
 
+import org.junit.Test;
+
 /**
+ * https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/0-1-bei-bao-wen-ti-xiang-jie-zhen-dui-ben-ti-de-yo/
+ * 作为「0-1 背包问题」，它的特点是：「每个数只能用一次」。解决的基本思路是：物品一个一个选，容量也一点一点增加去考虑，这一点是「动态规划」的思想，特别重要。
+ * 在实际生活中，我们也是这样做的，一个一个地尝试把候选物品放入「背包」，通过比较得出一个物品要不要拿走。
+ *
+ * 具体做法是：画一个 len 行，target + 1 列的表格。这里 len 是物品的个数，target 是背包的容量。len 行表示一个一个物品考虑，target + 1多出来的那 1 列，表示背包容量从 0 开始考虑。很多时候，我们需要考虑这个容量为 0 的数值。
+ *
  * 我们有一个背包，背包总的承载重量是Wkg。现在我们有n个物品，每个物品的重量不等，并且不可分割。我们现在期望选择几件物品，
  * 装载到背包中。在不超过背包所能装载重量的前提下，如何让背包中物品的总重量最大？
  *
@@ -76,21 +84,25 @@ public class ZeroOneBag {
      * @param n      n:物品个数（0-5）
      * @param w      w:背包可承载重量（0-9）
      * @return
+     * 状态定义：第一维n表示放了几个物品，第二维w表示放或放入物品后，背包里的总重量
+     * 状态转移方程：
+     * 思路：物品一个一个尝试，容量一点一点尝试，每个物品分类讨论的标准是：选与不选。
      */
     public int knapsack(int[] weight, int n, int w) {
+        // 状态定义：第一维表示放了几个物品，第二维表示放或放入物品后，背包里的总重量
         boolean[][] states = new boolean[n][w + 1]; //默认值false
         states[0][0] = true; //初始化,第一行的数据要特殊处理，可以利用哨兵优化
         states[0][weight[0]] = true;
 
         for (int i = 1; i < n; i++) { // 动态规划状态转移
             for (int j = 0; j <= w; j++) { // 不把第i个物品放入背包
-                if (states[i - 1][j] == true) {
-                    states[i][j] = true;
+                if (states[i - 1][j]) {
+                    states[i][j] = states[i - 1][j];
                 }
             }
-            for (int j = 0; j + weight[i] <= w; i++) { //把第i个物品放入背包
-                if (states[i - 1][j] == true) {
-                    states[i - 1][j + weight[i]] = true;
+            for (int j = 0; j + weight[i] <= w; j++) { //把第i个物品放入背包
+                if (states[i - 1][j]) {
+                    states[i][j + weight[i]] = true;
                 }
             }
         }
@@ -100,5 +112,11 @@ public class ZeroOneBag {
             }
         }
         return 0;
+    }
+
+    @Test
+    public void test() {
+        int cw = knapsack(items, n, w);
+        System.out.println(cw);
     }
 }

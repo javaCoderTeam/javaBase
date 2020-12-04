@@ -152,6 +152,7 @@ public class Solution {
     @Test
     public void test() {
         int[] prices = {3, 2, 6, 5, 0, 3};
+        System.out.println(maxProfit(prices, 2));
         System.out.println(maxProfit2(prices, 2));
     }
 }
