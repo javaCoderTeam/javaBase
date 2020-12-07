@@ -84,6 +84,24 @@ public class Solution {
         triangle.add(Arrays.asList(4, 1, 8, 3));
 
         System.out.println(minimumTotal2(triangle));
+        System.out.println(minimumTotal3(triangle));
 
+    }
+
+    public int minimumTotal3(List<List<Integer>> triangle) {
+        if (triangle == null || triangle.size() == 0) {
+            return 0;
+        }
+
+        int n = triangle.size();
+        int m = triangle.get(n - 1).size();
+        int[] dp = new int[m + 1];
+
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                dp[j] = Math.min(dp[j], dp[j + 1]) + triangle.get(i).get(j);
+            }
+        }
+        return dp[0];
     }
 }

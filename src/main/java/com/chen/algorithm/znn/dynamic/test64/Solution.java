@@ -17,12 +17,12 @@ import org.junit.Test;
  *
  * @Auther: zhunn
  * @Date: 2020/11/5 11:33
- * @Description: 最小路径和：1-动态规划；2-动态规划-优化空间，使用原数组空间；3-动态规划-优化空间，不更改原数组(可忽略)
+ * @Description: 最小路径和：1-动态规划(推荐)；2-动态规划-优化空间，使用原数组空间；3-动态规划-优化空间，不更改原数组(可忽略)
  */
 public class Solution {
 
     /**
-     * 1-动态规划，官方解答
+     * 1-动态规划，官方解答(推荐)
      *
      * @param grid
      * @return
@@ -107,6 +107,6 @@ public class Solution {
     public void testCase() {
         int[][] nums = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
 
-        System.out.println(minPathSum2(nums));
+        System.out.println(minPathSum(nums));
     }
 }
