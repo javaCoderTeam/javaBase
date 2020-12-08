@@ -35,8 +35,8 @@ public class Solution {
         if (len == 1) {
             return nums[0];
         }
-        return Math.max(myRob(Arrays.copyOfRange(nums, 0, len - 1)),
-                myRob(Arrays.copyOfRange(nums, 1, len)));
+        return Math.max(myRob2(Arrays.copyOfRange(nums, 0, len - 1)),
+                myRob2(Arrays.copyOfRange(nums, 1, len)));
 
     }
 
@@ -64,7 +64,7 @@ public class Solution {
 
     @Test
     public void test() {
-        int[] nums = {1, 2, 3, 1};
+        int[] nums = {2, 3, 2};
         System.out.println(rob(nums));
     }
 }

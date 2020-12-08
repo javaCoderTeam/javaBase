@@ -3,7 +3,6 @@ package com.chen.algorithm.znn.dynamic.test343;
 import org.junit.Test;
 
 /**
- * 给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
  * 343. 整数拆分
  * 给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
  * 示例 1:
@@ -32,8 +31,9 @@ public class Solution {
 
         for (int i = 2; i <= n; i++) {
             for (int j = 1; j < i; j++) {
-                dp[i] = Math.max(dp[i], Math.max(dp[i - j] * j, (i - j) * j));  // 将 i 拆分成 j 和 i−j 的和，且 i−j 不再拆分成多个正整数，此时的乘积是 j×(i−j)；
+                // 将 i 拆分成 j 和 i−j 的和，且 i−j 不再拆分成多个正整数，此时的乘积是 j×(i−j)；
                 // 将 i 拆分成 j 和 i−j 的和，且 i−j 继续拆分成多个正整数，此时的乘积是 j×dp[i−j]。
+                dp[i] = Math.max(dp[i], Math.max(dp[i - j] * j, (i - j) * j));
             }
         }
         return dp[n];

@@ -15,17 +15,23 @@ import java.util.Arrays;
  *
  * @Auther: zhunn
  * @Date: 2020/11/4 21:03
- * @Description: 最长上升子序列：1-动态规划；2-动态规划-优化空间（贪心+二分查找）
+ * @Description: 最长上升子序列：1-动态规划（推荐）；2-动态规划-优化空间（贪心+二分查找）
  */
 public class Solution {
 
+    /**
+     * 1-动态规划（推荐）
+     *
+     * @param nums
+     * @return
+     */
     public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
 
         int len = nums.length;
-        int[] dp = new int[len];
+        int[] dp = new int[len]; // dp[i]标识以nums[i]结尾的[上升子序列]的长度
         Arrays.fill(dp, 1);
 
         int res = 0;
@@ -43,7 +49,7 @@ public class Solution {
 
     @Test
     public void test() {
-        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+        int[] nums = {10, 9, 2, 5, 3, 7, 8, 101, 18};
         System.out.println(lengthOfLIS(nums));
     }
 }

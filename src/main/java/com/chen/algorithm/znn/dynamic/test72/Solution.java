@@ -42,15 +42,15 @@ public class Solution {
         }
 
         int[][] dp = new int[m + 1][n + 1];    // 多开一行一列是为了保存边界条件，即字符长度为 0 的情况，这一点在字符串的动态规划问题中比较常见
-        for (int i = 0; i < m + 1; i++) {     // 边界状态初始化：当 word 2 长度为 0 时，将 word1 的全部删除
+        for (int i = 0; i <= m; i++) {     // 边界状态初始化：当 word 2 长度为 0 时，将 word1 的全部删除
             dp[i][0] = i;
         }
-        for (int j = 0; j < n + 1; j++) {    // 当 word1 长度为 0 时，就插入所有 word2 的字符
+        for (int j = 0; j <= n; j++) {    // 当 word1 长度为 0 时，就插入所有 word2 的字符
             dp[0][j] = j;
         }
 
-        for (int i = 1; i < m + 1; i++) {
-            for (int j = 1; j < n + 1; j++) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
@@ -65,6 +65,5 @@ public class Solution {
     public void test() {
         System.out.println(minDistance("horse", "ros"));
     }
-
 
 }

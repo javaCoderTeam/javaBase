@@ -26,7 +26,7 @@ public class Solution {
         //dp[0] = 0;  //题意是给定正整数，不用考虑0
 
         for (int i = 1; i <= n; i++) {
-            dp[i] = i;
+            dp[i] = i;                      // 赋初始值，最多是有它本身这么多
             for (int j = 1; i - j * j >= 0; j++) {
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
             }
@@ -36,6 +36,6 @@ public class Solution {
 
     @Test
     public void test() {
-        System.out.println(numSquares(9));
+        System.out.println(numSquares(12));
     }
 }

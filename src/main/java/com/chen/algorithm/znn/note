@@ -194,15 +194,20 @@ dynamic
 714、 可以买卖(交易)多次，一次买卖含一次手续费
 (股票买卖系列 end)
 70. 爬楼梯 ***                     1-迭代，2-动态规划，dp[i] = dp[i - 1] + dp[i - 2];
-120. 三角形最小路径和 ***           for(int i = n - 1; i >= 0; i--);for(int j = 0; j <= i; j++);dp[j]=Math.min(dp[j],dp[j+1]) + triangle.get(i).get(j);
-64. 最小路径和 ***                 初始化dp[0][0] = grid[0][0];初始化第0行和第0列，for(int j=1;j<cols;j++);dp[i][j]=Math.min(dp[i-1][j], dp[i][j-1])+grid[i][j];
-62. 不同路径 ***
-53. 最大子序和 ***
-300. 最长上升子序列 ***
-152. 乘积最大子数组***
-279. 完全平方数 ***
-343. 整数拆分 ***
-72. 编辑距离 ***
-198. 打家劫舍 ***
-213. 打家劫舍 II ***
-337. 打家劫舍 III ***
+120. 三角形最小路径和(自底向上)      for(int i = n - 1; i >= 0; i--);for(int j = 0; j <= i; j++);dp[j]=Math.min(dp[j],dp[j+1]) + triangle.get(i).get(j);
+64. 最小路径和(方格子自顶向下)       初始化dp[0][0]=grid[0][0];边界初始化第0行和第0列，for(int j=1;j<cols;j++);dp[i][j]=Math.min(dp[i-1][j],dp[i][j-1])+grid[i][j];
+62. 不同路径(m*n网格)              边界初始化,dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+53. 最大子序和-返回子数组的和        1-动态规划，2-定义pre=nums[0]和res=nums[0]，for{pre = Math.max(pre + nums[i], nums[i]);res = Math.max(res, pre);}
+152. 乘积最大子数组-返回子数组的乘积  int[][] dp = new int[len][2];dp[i][0]：以 nums[i] 结尾的连续子数组的最小值,dp[i][1]：以 nums[i] 结尾的连续子数组的最大值
+300. 最长上升子序列-返回子序列的长度   for (int i = 1; i < len; i++);for(int j = 0; j < i; j++)两层循环if (nums[j] < nums[i])dp[i] = Math.max(dp[i], dp[j] + 1);
+279. 完全平方数-返回需要的完全平方个数 new int[n + 1];内层循环for (int j = 1; i - j * j >= 0; j++){dp[i] = Math.min(dp[i], dp[i - j * j] + 1);}
+343. 整数拆分-返回最大乘积           int[] dp=new int[n+1]; dp[i] 表示将正整数 i 拆分成至少两个正整数的和之后，这些正整数的最大乘积
+                                  for (int i = 2; i <= n; i++);for(int j = 1; j < i; j++){dp[i]=Math.max(dp[i], Math.max(dp[i-j]*j, (i-j) * j));}
+72. 编辑距离 ***                   边界初始化，if (word1.charAt(i - 1) == word2.charAt(j - 1)) {dp[i][j] = dp[i - 1][j - 1];}else{
+                                  dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i - 1][j]), dp[i][j - 1]) + 1;}
+198. 打家劫舍 ***       dp[i] 表示前 i 间房屋能偷窃到的最高总金额。dp[i] = Math.max(dp[i - 2]+nums[i], dp[i-1]);第i间房偷dp[i-2]+nums[i]；第i间房不偷dp[i-1]
+213. 打家劫舍II (环形房屋在198题的基础上，选择不偷第一家或不偷最后一家)Math.max(myRob2(Arrays.copyOfRange(nums, 0, len-1)),myRob2(Arrays.copyOfRange(nums,1,len)));
+337. 打家劫舍III (二叉树房屋)    1-树的后序遍历；
+（dp[0]：以当前 node 为根结点的子树能够偷取的最大价值，规定 node 结点不偷; dp[1]：以当前 node 为根结点的子树能够偷取的最大价值，规定 node 结点偷）
+int[] left = dfs(root.left); int[] right = dfs(root.right);int[] res = new int[2];
+res[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);res[1] = root.val + left[0] + right[0];
