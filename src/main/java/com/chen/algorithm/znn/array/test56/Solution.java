@@ -88,7 +88,7 @@ public class Solution {
             if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < L) {
                 merged.add(new int[]{L, R});
             } else {
-                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], R);
+                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], R); // 已经排过序，不需要比对起始值
             }
         }
         return merged.toArray(new int[merged.size()][]);
