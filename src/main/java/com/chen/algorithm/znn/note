@@ -63,8 +63,8 @@ sort
 快速排序 sort/QuickSort （nlogn 不稳定）**
 
 string
-3. 无重复字符的最长子串 *** 	滑动窗口
-5. 最长回文子串	动态规划
+3. 无重复字符的最长子串 *** 	滑动窗口，Map<Character,Integer>，start = Math.max(start, map.get(c));map.put(c, end+1);res = Math.max(res, end-start+1);
+5. 最长回文子串	动态规划    dp[i][j]表示字符串 s 的第 i 到 j 个字母组成的串是否是回文串(x 表示增量，子串长度，)
 14. 最长公共前缀 ***
 415. 字符串相加
 
@@ -72,7 +72,7 @@ hash
 15. 三数之和 ***		排序+双指针
 18. 四数之和 ???		排序+双指针
 49. 字母异位词分组 ***	排序+map
-242. 有效的字母异位词 ***		哈希表
+242. 有效的字母异位词 ***		迭代,int[] counter = new int[26];counter[s.charAt(i) - 'a']++;counter[t.charAt(i) - 'a']--;if(counter[i] != 0){return false;}
 
 array
 剑指 Offer 29. 顺时针打印矩阵		left right top bottom

@@ -32,7 +32,7 @@ public class Solution {
 
         int i = 0;
         for (int j = 0; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
+            if (nums[j] != nums[i]) {       // 不相等的重新放入数组中，重新组成无重复数组
                 i++;
                 nums[i] = nums[j];
             }
