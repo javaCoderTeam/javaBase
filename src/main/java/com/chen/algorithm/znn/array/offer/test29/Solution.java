@@ -65,11 +65,11 @@ public class Solution {
         int left = 0, right = matrix[0].length - 1, top = 0, bottom = matrix.length - 1;
 
         while (numEle >= 1) {
-            for (int i = left; i <= right && numEle >= 1; i++) {
+            for (int i = left; i <= right && numEle >= 1; i++) { //注意边界 >=，<=
                 result[idx++] = matrix[top][i];
                 numEle--;
             }
-            top++;
+            top++;          //注意边界 >=，<=,因为这里都做了递增和递减处理，所以遍历需要带等号
             for (int i = top; i <= bottom && numEle >= 1; i++) {
                 result[idx++] = matrix[i][right];
                 numEle--;
