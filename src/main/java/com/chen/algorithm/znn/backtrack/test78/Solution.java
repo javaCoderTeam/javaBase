@@ -31,9 +31,6 @@ import java.util.List;
 public class Solution {
 
     public List<List<Integer>> subsets(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return null;
-        }
         List<List<Integer>> res = new ArrayList<>();
         backtrack(0, nums, new ArrayList<>(), res);
         return res;
