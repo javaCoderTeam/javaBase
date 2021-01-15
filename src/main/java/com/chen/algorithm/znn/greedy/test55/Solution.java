@@ -3,6 +3,7 @@ package com.chen.algorithm.znn.greedy.test55;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/jump-game/solution/dong-tai-gui-hua-yu-tan-xin-suan-fa-jie-jue-ci-wen/
  * 55. 跳跃游戏
  * 给定一个非负整数数组，你最初位于数组的第一个位置。
  * 数组中的每个元素代表你在该位置可以跳跃的最大长度。
