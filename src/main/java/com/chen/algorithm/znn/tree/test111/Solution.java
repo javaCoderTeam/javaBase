@@ -88,7 +88,7 @@ public class Solution {
                 }
 
                 if (node.left == null && node.right == null) {
-                    return minDepth;
+                    return minDepth + 1;
                 }
             }
         }
