@@ -88,7 +88,7 @@ public class Solution {
                 }
 
                 if (node.left == null && node.right == null) {
-                    return minDepth + 1;
+                    return minDepth;
                 }
             }
         }
@@ -101,7 +101,7 @@ public class Solution {
         TreeNode right = new TreeNode(7, new TreeNode(15), new TreeNode(20));
         TreeNode root = new TreeNode(3, left, right);
 
-        int res = minDepth2(left);
+        int res = minDepth2(root);
         System.out.println(res);
     }
 }
