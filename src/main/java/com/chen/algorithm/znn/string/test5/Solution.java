@@ -20,6 +20,7 @@ import org.junit.Test;
  * @Description: 最长回文子串：
  * 1-动态规划；时间复杂度：O(n2)，空间复杂度：O(n2)
  * 2-中心扩展算法；时间复杂度：O(n2)，空间复杂度：O(1)
+ * 3-判断字符串是否是回文串；时间复杂度：O(n)，空间复杂度：O(1)
  */
 public class Solution {
 
@@ -92,12 +93,40 @@ public class Solution {
         return right - left - 1;
     }
 
+    /**
+     * 3-判断字符串是否是回文串
+     *
+     * @param s
+     * @return
+     */
+    public boolean isPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return false;
+        }
+
+        int len = s.length();
+        int j = len - 1;
+        for (int i = 0; i < len / 2; i++) {
+            char head = s.charAt(i);
+            char tail = s.charAt(j);
+            if (head != tail) {
+                return false;
+            }
+            j--;
+        }
+        return true;
+    }
+
     @Test
     public void test() {
         System.out.println("123456".substring(0, 3));
         System.out.println(longestPalindrome("dcacdefd"));
         System.out.println(longestPalindrome("babad"));
         System.out.println(longestPalindrome("cbbd"));
+        System.out.println("---------------");
+        System.out.println(isPalindrome("12345"));
+        System.out.println(isPalindrome("12321"));
+        System.out.println(isPalindrome("1221"));
     }
 
 }
