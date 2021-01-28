@@ -39,8 +39,8 @@ public class Solution {
         Map<Character, Integer> map = new HashMap<>();
         int ans = 0;
         int n = s.length();
-
-        for (int start = 0, end = 0; end < n; end++) {
+        int start = 0;
+        for (int end = 0; end < n; end++) {
             char c = s.charAt(end);
             if (map.containsKey(c)) {
                 start = Math.max(start, map.get(c));
