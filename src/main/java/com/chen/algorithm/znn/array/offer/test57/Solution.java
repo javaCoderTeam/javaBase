@@ -66,7 +66,7 @@ public class Solution {
         int sum = 0;
         List<int[]> res = new ArrayList<>();
 
-        while (left <= target / 2) {
+        while (left <= target / 2) { // 假设窗口左边界i=target/2, i+1=target/2 +1,那么i + (i+1) = target+1,即最小的窗口的元素之和就已经比target大了，所以当i>=target/2时不可能有一个窗口长度>=2的答案。 这也归因于本题的特殊要求：答案数组至少包含两个元素。 如果没有上述要求，那么在i>=target/2的范围内还存在当i == target时的结果，窗口长度==1。
             if (sum < target) {
                 sum += right;
                 right++;
