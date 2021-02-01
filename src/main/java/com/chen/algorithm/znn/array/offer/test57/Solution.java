@@ -75,7 +75,7 @@ public class Solution {
                 left++;
             } else {
                 int[] arr = new int[right - left];
-                for (int i = left; i < right; i++) {
+                for (int i = left; i < right; i++) {    // 因为当sum=target的时候，此时sum加的是j，而j此时又进行了++操作，相当于j右移了一下，不在sum计算范围内，所以是左闭右开
                     arr[i - left] = i;
                 }
                 res.add(arr);
