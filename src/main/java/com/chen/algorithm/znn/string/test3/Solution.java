@@ -3,9 +3,7 @@ package com.chen.algorithm.znn.string.test3;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/hua-jie-suan-fa-3-wu-zhong-fu-zi-fu-de-zui-chang-z/
@@ -31,6 +29,11 @@ import java.util.Set;
  */
 public class Solution {
 
+    /**
+     * 返回子串长度
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -52,10 +55,38 @@ public class Solution {
         return ans;
     }
 
+    /**
+     * 返回子串
+     * @param s
+     * @return
+     */
+    public String getSubString(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        int start = 0;
+        String sub = "";
+        for (int end = 0; end < s.length(); end++) {
+            char c = s.charAt(end);
+            if (map.containsKey(c)) {
+                start = Math.max(start, map.get(c));
+            }
+
+            if (sub.length() < end - start + 1) {
+                sub = s.substring(start, end + 1);
+            }
+            map.put(c, end + 1);
+        }
+        return sub;
+    }
+
     @Test
     public void test() {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
         System.out.println(lengthOfLongestSubstring("bbbbb"));
         System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(getSubString("pwwkew"));
+
     }
 }
